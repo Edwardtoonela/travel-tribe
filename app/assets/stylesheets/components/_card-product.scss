@@ -10,14 +10,6 @@
   border: 1px solid #000000;
 }
 
-.description-box {
-
-}
-
-.info-box {
-
-}
-
 .card-product img {
   height: 100%;
   width: 350px;
@@ -38,16 +30,37 @@
   margin-top: 8px;
 }
 
-.card-product .trip-description {
-  padding: 35px;
+.card-product .description-box p {
+  margin-top: 15px;
 }
 
-.informatives {
+.description-box {
+  padding-right: 25px;
+  padding-top: 35px;
+  padding-left: 35px;
+  padding-bottom: 35px;
+}
 
+.info-box {
+  padding-left: 25px;
+  padding-top: 35px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+}
+
+.card-product .trip-description {
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-product .informatives {
+  margin-bottom: 25px;
+  margin-top: 50px;
 }
 
 .card-product .tribe {
-
+  margin-top: 25px;
 }
 
 .card-product .trip-infos {
@@ -64,4 +77,10 @@
 
 .card-product .bookmark{
 
+}
+
+.card-product .profile-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
 }
