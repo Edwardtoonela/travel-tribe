@@ -10,14 +10,6 @@
   border: 1px solid #000000;
 }
 
-.description-box {
-
-}
-
-.info-box {
-
-}
-
 .card-product img {
   height: 100%;
   width: 350px;
@@ -38,11 +30,25 @@
   margin-top: 8px;
 }
 
-.card-product .trip-description {
+.description-box {
   padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.informatives {
+.info-box {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-product .trip-description {
+
+}
+
+.card-product .informatives {
 
 }
 
@@ -64,4 +70,10 @@
 
 .card-product .bookmark{
 
+}
+
+.card-product .profile-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
 }
