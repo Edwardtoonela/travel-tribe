@@ -5,3 +5,11 @@
 @import "navbar";
 @import "card-product";
 @import "footer";
+
+* {
+  font-family: $popins;
+}
+
+h1, h2 {
+  font-family: $popins;
+}
