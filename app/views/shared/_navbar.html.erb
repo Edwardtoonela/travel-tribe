@@ -1,29 +1,26 @@
-<div>
+<div class="fixed-top mb-4">
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div class="logo">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "tribe_logo_2.png" %>
-    <% end %>
-  </div>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "tribe_logo_2.png" %>
+      <% end %>
+    </div>
 
     <div class="wrapping container">
       <div class="search row">
           <input type="text" class="searchTerm col" placeholder="search...">
           <div type="submit" class="searchButton col">
             <i class="fa fa-search"></i>
-        </div>
+          </div>
       </div>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="dropdown">
+    <button class="navbar-toggler dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div>
-        <a href="#" class="join">Join The Comunity</a>
-      </div>
 
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -49,6 +46,6 @@
       </ul>
     </div>
   </div>
+  </div>
 </div>
 
-</div>
