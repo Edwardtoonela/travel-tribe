@@ -1,5 +1,34 @@
 // Specific CSS for your home-page
 
+#map {
+  height: 900px;
+  width: 515px;
+  position: sticky;
+  top: 0;
+}
+
+.row {
+  flex-wrap: nowrap;
+}
+
+.container {
+  padding-top: 100px;
+  margin-left: 25px;
+  margin-right: 80px;
+}
+
+.ratings {
+  margin-right: 30px
+}
+
+.price {
+  padding: 20px 10px 10px 10px;
+  text-align: center;
+}
+
+.infos {
+  padding: 0px;
+=======
+
 .wrapper {
   margin-top: 80px;
-}
