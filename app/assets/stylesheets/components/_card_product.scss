@@ -1,86 +1,17 @@
-.card-product {
+.card {
   overflow: hidden;
-  height: 300px;
+  height: 223px;
+  width: 825px;
   background: white;
   /* box-shadow: 0 0 15px rgb(0 0 0 / 20%); */
-  display: flex;
-  align-items: center;
+  // display: flex;
   border-radius: 30px;
   margin: 30px;
   border: 1px solid #000000;
 }
 
-.card-product img {
+.card img {
   height: 100%;
-  width: 350px;
+  width: 215px;
   object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 14px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .description-box p {
-  margin-top: 15px;
-}
-
-.description-box {
-  padding-right: 25px;
-  padding-top: 35px;
-  padding-left: 35px;
-  padding-bottom: 35px;
-}
-
-.info-box {
-  padding-left: 25px;
-  padding-top: 35px;
-  padding-right: 35px;
-  padding-bottom: 35px;
-}
-
-.card-product .trip-description {
-  margin-bottom: 75px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-product .informatives {
-  margin-bottom: 25px;
-  margin-top: 50px;
-}
-
-.card-product .tribe {
-  margin-top: 25px;
-}
-
-.card-product .trip-infos {
-
-}
-
-.card-product .tags-small{
-
-}
-
-.card-product .rating{
-
-}
-
-.card-product .bookmark{
-
-}
-
-.card-product .profile-icon {
-  height: 50px;
-  width: 50px;
-  border-radius: 100px;
 }

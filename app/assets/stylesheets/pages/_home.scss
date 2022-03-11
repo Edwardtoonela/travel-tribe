@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.content {
+  display: flex;
+}
+
+#map {
+  height: 900px;
+  width: 515px;
+  position: sticky;
+  top: 0;
+}
