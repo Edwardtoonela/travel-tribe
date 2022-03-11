@@ -43,3 +43,12 @@
 .push {
   height: 50px;
 }
+
+.join {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}

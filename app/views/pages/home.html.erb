@@ -1,10 +1,12 @@
 <div class="wrapper">
     <div class="mb-4">
       <div id="bannerhp">
-        <h1>Make friends, save </h1>
-        <h1>money, travel more.</h1>
+        <div class="banner-h1">
+          <h1>Make friends, save </h1>
+          <h1>money, travel more.</h1>
+        </div>
         <div class="btn">
-          Search how
+          <%= link_to "Search Now", href="#card-product", class: "search-btn" %>
         </div>
       </div>
     </div>
@@ -14,7 +16,7 @@
       <h1 class="pre-card-animation">Trips all over Rio de Janeiro</h1>
     </div>
 
-  <div class="card-product">
+  <div class="card-product" id="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="row">
         <div class="col-sm">
