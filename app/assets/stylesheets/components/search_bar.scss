@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: $white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  border: 1px solid gainsboro;
+  padding: 4px;
+  height: 36px;
+  border-radius: 3px;
+  outline: none;
+  color: $light-gray;
+}
+
+.searchTerm:focus{
+  color: $dark-green;
+}
+
+.searchButton {
+  position: absolute;
+  left: 626px;
+  top: 9%;
+  width: 34px;
+  height: 30px;
+  // background: $light-green;
+  text-align: center;
+  color: $light-green;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:hover {
+    color: $dark-green;
+  }
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrapping {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
