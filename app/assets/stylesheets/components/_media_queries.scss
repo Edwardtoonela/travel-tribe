@@ -1,0 +1,58 @@
+// SMALLER MOBILE SIZE
+@media only screen and (max-width: 520px){
+  .searchButton {
+    left: 234px;
+  }
+
+  .wrapping {
+    width: 298px;
+  }
+
+  .footer a, p {
+    font-size: small;
+  }
+
+  .footer {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
+
+// MOBILE SIZE
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  .searchButton {
+    left: 280px;
+  }
+
+  .wrapping {
+    width: 345px;
+  }
+}
+
+// TABLET SIZE
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  .searchTerm {
+    margin-right: 20px;
+  }
+
+  .searchButton {
+    left: 296px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1380px) {
+  .searchButton {
+    left: 448px;
+  }
+}
+// HIDE LOGO
+@media only screen and (max-width: 1024px) {
+  .navbar-lewagon .navbar-brand img {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+} 
+
+
+
