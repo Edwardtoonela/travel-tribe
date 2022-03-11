@@ -10,18 +10,30 @@
   width: 100px;
 }
 
-.join {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 0px 10px;
+.navbar {
+  background-color: $white;
+  margin-left: 1em;
+  // margin-right: 1em;
+}
 
-  &:hover {
-    opacity: 1;
+.navbar-toggler {
+  margin-right: 10px;
+  border-radius: 5px;
+  outline: none;
+
+  &:active {
+    color: $light-green;
   }
 }
 
-.navbar {
-  background-color: $white;
+.dropdown-menu {
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+  margin-top: 2px;
+  padding: 5px;
 }
+
+.dropdown-item {
+  color: $light-gray;
+}
+
