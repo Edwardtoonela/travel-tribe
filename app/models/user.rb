@@ -8,6 +8,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :fullname, presence: true, length: { minimum: 5 }
-  validates :username, presence: true, length: { minimum: 3 }
+  validates :full_name, presence: true
+  validates :user_name, presence: true, length: { minimum: 3 }
 end
