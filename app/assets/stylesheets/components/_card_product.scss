@@ -1,17 +1,22 @@
 .card {
   overflow: hidden;
-  height: 223px;
-  width: 825px;
+  height: 300px;
+  width: 850px;
   background: white;
   /* box-shadow: 0 0 15px rgb(0 0 0 / 20%); */
   // display: flex;
   border-radius: 30px;
-  margin: 30px;
   border: 1px solid #000000;
 }
 
 .card img {
-  height: 100%;
-  width: 215px;
+  height: 300px;
+  width: 225px;
   object-fit: cover;
+}
+
+.card .profile-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
