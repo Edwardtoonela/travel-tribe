@@ -1,7 +1,7 @@
 // SMALLER MOBILE SIZE
 @media only screen and (max-width: 520px){
   .searchButton {
-    left: 234px;
+    left: 214px;
   }
 
   .wrapping {
@@ -16,6 +16,10 @@
     flex-direction: column;
     margin-top: 40px;
   }
+
+  .searchTerm {
+    margin-right: 20px;
+  }
 }
 
 // MOBILE SIZE
@@ -26,6 +30,9 @@
 
   .wrapping {
     width: 345px;
+  }
+  s.searchTerm {
+    margin-right: 20px;
   }
 }
 

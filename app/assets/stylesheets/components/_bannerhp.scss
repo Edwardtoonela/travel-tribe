@@ -1,4 +1,6 @@
 #bannerhp {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), black), url('https://whereverfamily.com/wp-content/uploads/2017/12/dreamstime_m_88435486-1030x687.jpg');
+
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -6,41 +8,29 @@
   margin: 20px;
   padding-left: 50px;
   padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 40px;
   color: white;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), black), url('https://whereverfamily.com/wp-content/uploads/2017/12/dreamstime_m_88435486-1030x687.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50px;
-  padding-top: 10%;
-  // width: 1301px;
-  // height: 561px;
   font-size: 10vw;
-  padding-bottom: 5%;
 }
 
-#bannerhp button {
-  // margin: 20px;
-  // width: 196px;
-  // height: 62px;
+.btn {
+  width: 130px;
   border-radius: 10px;
-  background: white;
-  font-size: 2vw;
-  min-width: 100px;
-  min-height: 30px;
-  max-height: 11%;
-  max-width: 20%;
-  padding: 5px, 15px;
   margin-top: 20px;
-  font-weight: lighter;
-  border-color: rgba(255, 255, 255, 0);
-}
+  background-color: $white;
+  color: rgba(0, 0, 0, 0.5);
+  
 
-#bannerhp button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  &:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
 }
 
 #bannerhp h1 {
-  max-width: 60%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
+  font-size: 95px;
 }
