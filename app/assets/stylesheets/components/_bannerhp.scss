@@ -33,3 +33,12 @@
   font-weight: bolder;
   font-size: 95px;
 }
+
+.search-btn {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
