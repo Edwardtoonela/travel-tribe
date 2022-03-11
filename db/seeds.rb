@@ -8,3 +8,5 @@
 
 puts "Adding dummy user"
 User.create!(full_name: 'Fabio', email: "fabio@gmail.com", password: '123456', user_name: 'Fabio1')
+
+puts "Finished"
