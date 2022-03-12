@@ -9,4 +9,7 @@
 puts "Adding dummy user"
 User.create!(full_name: 'Fabio', email: "fabio@gmail.com", password: '123456', user_name: 'Fabio1')
 
+puts "Adding dummy trip"
+Trip.create!(start_date: '05-07-2022', end_date: "05-22-2022", description: 'Best trip ever i can not belivev asdkfnskd fksdnf', location: 'Madafuckinggaskar')
+
 puts "Finished"
