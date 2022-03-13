@@ -1,15 +1,16 @@
 #bannerhp {
   background-image: linear-gradient(rgba(255, 255, 255, 0), black), url('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/tst-r.jpeg');
-  height: 600px;
+  width: 98%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-content: center;
   margin: 20px;
   padding-left: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 20%;
   padding-top: 50px;
-  padding-bottom: 40px;
+  // padding-bottom: 40px;
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,7 +32,7 @@
 
 #bannerhp h1 {
   font-weight: bolder;
-  font-size: 95px;
+  font-size: 6.5vw;
 }
 
 .search-btn {
