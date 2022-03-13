@@ -1,5 +1,5 @@
 #bannerhp {
-  background-image: linear-gradient(rgba(255, 255, 255, 0), black), url('https://whereverfamily.com/wp-content/uploads/2017/12/dreamstime_m_88435486-1030x687.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0), black), src('app/assets/images/banner-compressed.png');
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   margin-top: 20px;
   background-color: $white;
   color: rgba(0, 0, 0, 0.5);
-  
+
 
   &:hover {
     color: rgba(0, 0, 0, 0.9);
