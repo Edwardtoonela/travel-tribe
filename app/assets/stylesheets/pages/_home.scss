@@ -1,20 +1,15 @@
 // Specific CSS for your home-page
 
 #map {
-  height: 900px;
-  width: 515px;
+  height: auto;
+  width: 100%;
   position: sticky;
   top: 0;
+  object-fit: cover;
 }
 
 .row {
   flex-wrap: nowrap;
-}
-
-.container {
-  padding-top: 100px;
-  margin-left: 25px;
-  margin-right: 80px;
 }
 
 #rating {
