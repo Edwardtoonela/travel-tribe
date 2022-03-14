@@ -1,20 +1,34 @@
-<h2>Log in</h2>
+<div class="container sign-box">
+  <div class="row">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <!-- HERE IS THE IMAGE -->
+    <div class="col-6">
+      <div class="container signup-img p-0">
+             <%= image_tag asset_path('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs3.jpeg'), class:"sign-img" %>
+      </div>
+    </div>
+
+    <!-- HERES THE SIGNIN-->
+    <div class="container col-6 d-flex flex-column justify-content-center p-0">
+      <h2 class="sing_title">Log in</h2>
+
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+        <div class="form-actions d-flex sign-btn">
+          <%= f.button :submit, "Log in", class: "btn btn-primary me-2" %>
+           <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
