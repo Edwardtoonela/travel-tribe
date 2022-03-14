@@ -15,7 +15,7 @@
       <div class="row" style="flex-direction: column;">
       <% @trips.each do |trip| %>
         <div class="col mt-1 mb-4">
-        <%= link_to trips_path(trip), class: "link_to_class" do %>
+        <%= link_to trip_path(trip), class: "link_to_class" do %>
           <div class="card">
             <div class="d-flex bd-highlight">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
