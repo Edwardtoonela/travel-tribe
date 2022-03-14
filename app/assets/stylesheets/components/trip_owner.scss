@@ -1,0 +1,85 @@
+
+.banner-owner{
+  display: flex;
+  align-items: center;
+}
+.profile-banner {
+  position: relative;
+  height: 475px;
+  background-image: url('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/profile_bg.jpeg');
+  padding-left: 50px;
+  padding-bottom: 20%;
+  padding-top: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 100%;
+  top: 15px;
+}
+
+.trip-owner{
+  position: absolute;
+  top: 75px;
+  left: 410px;
+  width: 572.09px;
+  height: 373.71px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 95, 183, 0.3);
+  border-radius: 30px;
+  
+}
+.owner-card {
+  position:relative;
+}
+
+.profile-img{
+  border-radius: 50%;
+  padding: 3px;
+  background: $white;
+  position: absolute;
+  left: 210px;
+  top: -40px;
+  height: 170px;
+  width: 170px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  // border: 1px solid #fff;
+}
+
+.owner {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 25px;
+  margin-top: 150px;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  fill: rgba(0, 0, 0, 0.6);
+  font-size: 30px;
+}
+
+.icons {
+  justify-content: space-around;
+  align-items: baseline;
+  font-size: 37px;
+}
+
+.join-btn {
+  background-color: rgb(0, 0, 0);
+  color: $white;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $white;
+  }
+}
+
