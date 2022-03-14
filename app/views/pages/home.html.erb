@@ -36,13 +36,10 @@
               <div class="p-3 flex-fill bd-highlight">
                 <div class="d-flex p-1 pt-2 mb-4 ms-4 bd-highlight">
                   <div class="d-flex bd-highlight">
-                    <p class="me-1"> 4.3</p>
-                    <i class="pb-1 fas fa-heart"></i>
-                    <i class="pb-1 fas fa-heart"></i>
-                    <i class="pb-1 fas fa-heart"></i>
+                    <p class="me-1"><%= trip.average_rating %></p>
                     <i class="pb-1 fas fa-heart"></i>
                   </div>
-                  <p class="ms-3"><%= review.rating.count %> reviews</p>
+                  <p class="ms-3"><%= trip.reviews.length %> reviews</p>
                 </div>
                   <div class= "mt-4 mb-2">
                     <div class="row mb-1">
