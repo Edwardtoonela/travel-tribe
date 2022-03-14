@@ -1,10 +1,13 @@
 // Specific CSS for your home-page
 
 #map {
-  height: 900px;
-  width: 515px;
-  position: sticky;
+  height: 600px;
+  width: 500px;
   top: 0;
+  position: absolute;
+  top: 885px;
+  left: 911px;
+  object-fit: cover;
 }
 
 .row {
