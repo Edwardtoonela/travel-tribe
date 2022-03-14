@@ -1,0 +1,20 @@
+.trip-planner-div {
+  display: flex;
+  flex-direction: column;
+  margin: 25vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.trip-planner-div button {
+  background-color: white;
+  border-color: black;
+  border-radius: 10px;
+  margin-top: 3vw;
+  width: 25vw;
+}
+
+.trip-planner-div button:hover {
+  background-color: black;
+  color: white;
+}
