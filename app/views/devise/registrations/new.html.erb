@@ -1,14 +1,16 @@
-<div class="container">
+<div class="container sign-box">
   <div class="row">
 
+    <!-- HERE IS THE IMAGE -->
     <div class="col-6">
-      <div class="container signup-img">
-             <%= image_tag asset_path('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs3.jpeg') %>
+      <div class="container signup-img p-0">
+             <%= image_tag asset_path('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs3.jpeg'), class:"sign-img" %>
       </div>
     </div>
 
-    <div class="container col-6 d-flex flex-column justify-content-center">
-      <h2>Sign up</h2>
+    <!-- HERES THE SIGNUP-->
+    <div class="container col-6 d-flex flex-column justify-content-center p-0">
+      <h2 class="sing_title">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -35,7 +37,7 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
 
-      <div class="form-actions d-flex">
+      <div class="form-actions d-flex sign-btn">
         <%= f.button :submit, "Sign up", class: "btn btn-primary me-2" %>
         <%= render "devise/shared/links" %>
       </div>
