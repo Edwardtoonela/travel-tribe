@@ -5,4 +5,5 @@ class Trip < ApplicationRecord
 
   validates :description, presence: true
   validates :location, presence: true
+  validates :name, presence: true
 end
