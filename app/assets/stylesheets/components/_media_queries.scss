@@ -59,4 +59,56 @@
     top: -9999px;
     left: -9999px;
   }
+
+  // == CARD PRODUCT == //
+
+  .card-div {
+    flex-direction: column;
+  }
+
+  .card {
+    overflow: hidden;
+    height: 800px;
+    width: 945px;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid #000000;
+  }
+
+  .card img {
+    height: 300px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .card ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card li {
+    margin-right: 25px;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .trip-title {
+    text-align: center;
+  }
+
+  .ratings {
+    justify-content: center;
+  }
+
+  .trip-tags {
+    display: flex;
+    justify-content: center;
+  }
+
+  .price{
+    font-size: 35px;
+  }
 } 
