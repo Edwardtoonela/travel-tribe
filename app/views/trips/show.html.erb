@@ -1,16 +1,39 @@
 <main class="mt-5 wrapper">
-  <div class="bannerhp">
-  
-  </div>
-  <div class="container mb-5" style="color: #000">
-    <h1>Trip</h1>
-    <div class="btn btn-primary">Booking</div>
-    <p>Start date: <%= @trip.start_date  %></p>
-    <p>End date: <%= @trip.end_date  %></p>
-    <p>Description: <%= @trip.description  %></p>
-    <p>Location: <%= @trip.location  %></p>
-    <div class="btn btn-primary">Edit</div>
-    <div class="btn btn-primary">Delete</div>
-  </div>
+  <div id="bannerhp" class="mb-5">
+    <div class="card">
+      <div class="row">
+        <div class="col">
+          <h1>Current user Trip</h1>
+          <p>Description: <%= @trip.description  %></p>
+        </div>
+      </div>
+          <div class="btn btn-primary">Booking</div>
+          <div class="btn btn-primary">Edit</div>
+          <div class="btn btn-primary">Delete</div>
+      </div>
+    </div>
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6 ms-4">
+          <img id="trip-pic" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs2.jpeg'>
+        </div>
+
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+          <h1>Trip</h1>
+          <p>Start date: <%= @trip.start_date  %></p>
+          <p>End date: <%= @trip.end_date  %></p>
+          <p>Location: <%= @trip.location  %></p>
+          <h2>Something about the trip</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6 ms-4">
+          <h1>To do</h1>
+        </div>
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+        </div>
   <div class="push"></div>
 </main>

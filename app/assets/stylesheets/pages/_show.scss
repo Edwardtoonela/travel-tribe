@@ -1,0 +1,21 @@
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 40px;
+}
+
+#trip-pic {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+}
+
+p {
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 24px;
+}
