@@ -36,3 +36,16 @@
 .card h4 {
   font-size: 16px;
 }
+
+.card li {
+  list-style-type: none;
+}
+
+.link_to_class {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover{
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
