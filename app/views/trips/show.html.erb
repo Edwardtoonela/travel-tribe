@@ -2,17 +2,24 @@
   <div id="bannerhp" class="mb-5 banner-owner">
     <div class="trip-owner">
       <div class="row">
-        <div class="col">
+        <div class="col owner-card">
           <div class="profile-img">
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
           </div>
-          <h1>Current user Trip</h1>
-          <p>Description: <%= @trip.description  %></p>
+          <h1 class="owner fs-1 text-center">Welcome to Anas trip!</h1>
+          <p class="description fs-3 text-center"> <%= @trip.description  %></p>
         </div>
       </div>
-          <div class="btn btn-primary">Booking</div>
-          <div class="btn btn-primary">Edit</div>
-          <div class="btn btn-primary">Delete</div>
+        <div class="d-flex ms-4">
+          <div class="btn btn-dark">Join The Trip</div>
+           <%#= fa_icon('solid heart')  %>
+           <%#= fas_icon('paper-plane')  %>
+           <%#= fas_icon('share')  %>
+           <i class="bi bi-heart-fill"></i>
+           <i class="bi bi-send-fill"></i>
+           <i class="bi bi-share-fill"></i>
+
+        </div>
     </div>
     </div>
     <div class="container mb-4">
@@ -38,7 +45,7 @@
       <div class="row g-2" style="justify-content: center;">
 
             <!-- Carousel wrapper -->
-        <section>
+        <section class="carousel-wrapper">
         
         <div class="swiper mySwiper container p-0">
       <div class="swiper-wrapper content">

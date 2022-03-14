@@ -32,7 +32,11 @@ gem 'devise'
 gem 'pundit'
 
 gem 'autoprefixer-rails', '10.2.5'
+
+# Font Awesome
 gem 'font-awesome-sass'
+gem 'font_awesome5_rails'
+
 gem 'simple_form', github: 'heartcombo/simple_form'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
