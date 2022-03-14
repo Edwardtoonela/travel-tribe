@@ -1,9 +1,8 @@
 // Specific CSS for your home-page
 
 #map {
-  height: auto;
+  height: 600px;
   width: 100%;
-  position: sticky;
   top: 0;
   object-fit: cover;
 }
@@ -21,7 +20,7 @@
   text-align: center;
 }
 
-.infos {
+#infos {
   padding: 0px;
 }
 
