@@ -18,18 +18,17 @@
           <div class="d-flex ms-4 icons">
             <div class="btn btn-dark join-btn">Join The Trip</div>
 
-              <div>
-                <%= fa_icon('heart') do %>
-                <% link_to root_path, class: "icon"  %>
+              
+              <%= link_to root_path, class: "icon" do %>
+                <%= fa_icon('heart') %>
               <% end  %>
-              </div>
-   
-              <%= fa_icon('paper-plane') do %>
-              <% link_to root_path %>
+
+              <%= mail_to "me@domain.com", class: "icon" do %>
+                <%= fa_icon('paper-plane') %>
               <% end  %>
-          
-              <%= fa_icon('share')  do %>
-              <% link_to root_path %>
+
+              <%= link_to trip_path(@trip), target: "_blank", class: "icon" do %>
+                <%= fa_icon('share') %>
               <% end  %>
 
           </div>
@@ -42,12 +41,12 @@
         </div>
 
         <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
-          <h1><%= @trip.name %></h1>
+          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
           <h4>Start date: <%= @trip.start_date  %></h4>
           <h4>End date: <%= @trip.end_date  %></h4>
-          <h4>Location: <%= @trip.location  %></h4>
-          <h2>Something about the trip</h2>
-          <h4 class="font-italic"><%= @trip.description  %></h4>
+          <h4 class="text-center">Location: <%= @trip.location  %></h4>
+          <h2 class="trip-txt-style text-center">Something about the trip</h2>
+          <h4 class="trip-description"><%= @trip.description  %></h4>
         </div>
       </div>
     </div>
@@ -68,14 +67,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VyZnxlbnwwfHwwfHw%3D&w=1000&q=80"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Surfing</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 
@@ -92,14 +91,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/woman-hiking-at-red-rock-canyon-during-sunset-with-royalty-free-image-1601478369.jpg?crop=1.00xw:0.751xh;0,0.159xh&resize=1200:*"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Hiking</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 
@@ -116,14 +115,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/44/bb/83/escadaria-central.jpg?w=1200&h=1200&s=1"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Shopping</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.,</span>
             </div>
 
@@ -140,14 +139,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://www.rionatural.com.br/wp-content/uploads/2015/08/StandupPaddle1.jpg"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Stand Up Paddle</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 
