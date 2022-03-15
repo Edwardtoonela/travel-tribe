@@ -32,7 +32,11 @@ gem 'devise'
 gem 'pundit'
 
 gem 'autoprefixer-rails', '10.2.5'
+
+# Font Awesome
 gem 'font-awesome-sass'
+gem 'font_awesome5_rails'
+
 gem 'simple_form', github: 'heartcombo/simple_form'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -63,3 +67,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'cloudinary', '1.16.0'

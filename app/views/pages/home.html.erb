@@ -1,8 +1,10 @@
 <div class="wrapper">
     <div class="mb-4">
-      <div id="bannerhp">
-        <h1>Make friends, save </h1>
-        <h1>money, travel more.</h1>
+      <div id="bannerhp" class="main-banner">
+        <div class="banner-text">
+          <h1>Make friends, save </h1>
+          <h1>money, travel more.</h1>
+        </div>
         <div class="btn">
           <%= link_to "Search Now", href="#card-product", class: "search-btn" %>
         </div>
@@ -12,20 +14,21 @@
       </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col">
-        <%= link_to trips_path(@trip), class: "link_to_class" do %>
+      <div class="row" style="flex-direction: column;">
+      <% @trips.each do |trip| %>
+        <div class="col mt-1 mb-4">
+        <%= link_to trip_path(trip), class: "link_to_class" do %>
           <div class="card">
             <div class="d-flex bd-highlight">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="p-3 flex-fill bd-highlight">
-                <h2 class="pb-2"><strong>Chill trip to Amsterdam</strong></h2>
+                <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
                 <ul>
-                  <li><h4 class="mb-2 mt-1"> Mar 7 - 27 (20 days)</h4></li>
-                  <li><h4 class="mb-2 mt-1"> 5-7 people</h4></li>
+                  <li><h4 class="mb-2 mt-1"> <%= trip.start_date %><%= trip.end_date %></h4></li>
+                  <li><h4 class="mb-2 mt-1"> <%= trip.max_guests %> people</h4></li>
                 </ul>
                 <div class="infos">
-                  <p class="mb-3 mt-4 pe-3">As of the moment, only the following airlines have been approved to operate Philippines Singapore VTL flights: lines, Scottish </p>
+                  <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>
                   <p class="mb-1 mt-2"> Tribe members:</p>
                 </div>
                 <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
@@ -35,13 +38,10 @@
               <div class="p-3 flex-fill bd-highlight">
                 <div class="d-flex p-1 pt-2 mb-4 ms-4 bd-highlight">
                   <div class="d-flex bd-highlight">
-                    <p class="me-1"> 4.3</p>
-                    <i class="pb-1 fas fa-heart"></i>
-                    <i class="pb-1 fas fa-heart"></i>
-                    <i class="pb-1 fas fa-heart"></i>
+                    <p class="me-1"><%= trip.average_rating %></p>
                     <i class="pb-1 fas fa-heart"></i>
                   </div>
-                  <p class="ms-3">200 reviews</p>
+                  <p class="ms-3"><%= trip.reviews.length %> reviews</p>
                 </div>
                   <div class= "mt-4 mb-2">
                     <div class="row mb-1">
@@ -58,14 +58,23 @@
                     </div>
                   </div>
                 <div class="price">
-                  <h3>500-800€</h3>
+                  <p>Price estimate: </p>
+                  <h3> <%= trip.price_min %> - <%= trip.price_max %></h3>
                 </div>
               </div>
             </div>
           </div>
           <% end %>
         </div>
+<<<<<<< HEAD
         <div class="col map">
+=======
+      <% end %>
+        <!-- MAP STARTS HERE -->
+
+        <div class="map">
+
+>>>>>>> d6a828ba5324ee8be120cec83344588a9a00bdf9
           <img id="map" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/Map%20placeholder.png'>
         </div>
     </div>
