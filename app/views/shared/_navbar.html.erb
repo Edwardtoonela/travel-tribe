@@ -8,7 +8,7 @@
     <div class="wrapping">
       <div class="search row">
         <%= form_with url: "/", method: :get do |form| %>
-          <%= form.text_field :query, class: "search", placeholder: "search..."%>
+          <%= form.text_field :query, class: "search searchTerm", placeholder: "search..."%>
           <div class ="searchButton">
           <%= image_submit_tag('https://res.cloudinary.com/dhilged09/image/upload/v1647366082/development/magnifying-glass-solid_k2gshp.svg', class: "style_image") %>
         <% end %>
@@ -16,6 +16,7 @@
       </div>
   </div>
 
+  <!-- OLD SEARCH BAR  -->
 
    <!-- <div class="wrapping"> -->
    <!--   <div class="search row"> -->
