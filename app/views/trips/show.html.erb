@@ -11,15 +11,27 @@
             <div class="profile-img">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
             </div>
-            <h1 class="owner fs-1 text-center">Welcome to Anas trip!</h1>
-            <p class="description fs-3 text-center"> <%= @trip.description  %></p>
+            <h1 class="owner fs-1 text-center">Welcome to Ana trip!</h1>
+            <p class="description fs-3 text-center"> Surf, Hike, Shopping</p>
           </div>
         </div>
           <div class="d-flex ms-4 icons">
             <div class="btn btn-dark join-btn">Join The Trip</div>
-            <p class="icon"><%= fa_icon('heart')  %></p>
-            <p class="icon"><%= fa_icon('paper-plane')  %></p>
-            <p class="icon"><%= fa_icon('share')  %></p>
+
+              <div>
+                <%= fa_icon('heart') do %>
+                <% link_to root_path, class: "icon"  %>
+              <% end  %>
+              </div>
+   
+              <%= fa_icon('paper-plane') do %>
+              <% link_to root_path %>
+              <% end  %>
+          
+              <%= fa_icon('share')  do %>
+              <% link_to root_path %>
+              <% end  %>
+
           </div>
       </div>
     </div>
@@ -29,13 +41,13 @@
           <img id="trip-pic" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs2.jpeg'>
         </div>
 
-        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-          <h1>Trip</h1>
-          <p>Start date: <%= @trip.start_date  %></p>
-          <p>End date: <%= @trip.end_date  %></p>
-          <p>Location: <%= @trip.location  %></p>
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
+          <h1><%= @trip.name %></h1>
+          <h4>Start date: <%= @trip.start_date  %></h4>
+          <h4>End date: <%= @trip.end_date  %></h4>
+          <h4>Location: <%= @trip.location  %></h4>
           <h2>Something about the trip</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <h4 class="font-italic"><%= @trip.description  %></h4>
         </div>
       </div>
     </div>

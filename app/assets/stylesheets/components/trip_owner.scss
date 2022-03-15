@@ -71,6 +71,10 @@
   justify-content: space-around;
   align-items: baseline;
   font-size: 37px;
+
+  // &:hover {
+  //   cursor: pointer;
+  // }
 }
 
 .join-btn {
@@ -83,3 +87,8 @@
   }
 }
 
+.trip-descript {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
