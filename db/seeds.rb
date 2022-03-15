@@ -18,8 +18,8 @@ Trip.create!(name: "Queenstown, NZ", start_date: '09-05-2022', end_date: "10-06-
 puts "Adding dummy ratings"
 Review.create!(comment: "Unbelivebly good. I will recommend this to everyone", rating: '5', user: User.first, trip: Trip.first)
 Review.create!(comment: "Pretty Good. Very satisfied with it.", rating: '4', user: User.first, trip: Trip.last)
-Review.create!(comment: "Poor. I cant recommend this to anyone", rating: '2', user: User.first, trip: Trip.first)
-Review.create!(comment: "Horrible. I cant recommend this to anyone", rating: '1', user: User.first, trip: Trip.last)
+Review.create!(comment: "Poor. I cant recommend this to anyone", rating: '2', user: User.first, trip: Trip.second)
+Review.create!(comment: "Horrible. I cant recommend this to anyone", rating: '1', user: User.first, trip: Trip.second)
 Review.create!(comment: "Avarage. Now sure if I can recommend this to anybody", rating: '3', user: User.first, trip: Trip.first)
 Review.create!(comment: "Horrible. I cant recommend this to anyone", rating: '2', user: User.first, trip: Trip.last)
 puts "Finished"
