@@ -2,6 +2,7 @@ class Trip < ApplicationRecord
   has_many :bookmarks
   has_many :bookings
   has_many :reviews
+  has_one_attached :photo
 
   validates :description, presence: true
   validates :location, presence: true
