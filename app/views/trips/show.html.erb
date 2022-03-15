@@ -11,15 +11,26 @@
             <div class="profile-img">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
             </div>
-            <h1 class="owner fs-1 text-center">Welcome to Anas trip!</h1>
-            <p class="description fs-3 text-center"> <%= @trip.description  %></p>
+            <h1 class="owner fs-1 text-center">Welcome to Ana trip!</h1>
+            <p class="description fs-3 text-center"> Surf, Hike, Shopping</p>
           </div>
         </div>
           <div class="d-flex ms-4 icons">
             <div class="btn btn-dark join-btn">Join The Trip</div>
-            <p class="icon"><%= fa_icon('heart')  %></p>
-            <p class="icon"><%= fa_icon('paper-plane')  %></p>
-            <p class="icon"><%= fa_icon('share')  %></p>
+
+              
+              <%= link_to root_path, class: "icon" do %>
+                <%= fa_icon('heart') %>
+              <% end  %>
+
+              <%= mail_to "me@domain.com", class: "icon" do %>
+                <%= fa_icon('paper-plane') %>
+              <% end  %>
+
+              <%= link_to trip_path(@trip), target: "_blank", class: "icon" do %>
+                <%= fa_icon('share') %>
+              <% end  %>
+
           </div>
       </div>
     </div>
@@ -29,13 +40,13 @@
           <img id="trip-pic" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs2.jpeg'>
         </div>
 
-        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-          <h1>Trip</h1>
-          <p>Start date: <%= @trip.start_date  %></p>
-          <p>End date: <%= @trip.end_date  %></p>
-          <p>Location: <%= @trip.location  %></p>
-          <h2>Something about the trip</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
+          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
+          <h4>Start date: <%= @trip.start_date  %></h4>
+          <h4>End date: <%= @trip.end_date  %></h4>
+          <h4 class="text-center">Location: <%= @trip.location  %></h4>
+          <h2 class="trip-txt-style text-center">Something about the trip</h2>
+          <h4 class="trip-description"><%= @trip.description  %></h4>
         </div>
       </div>
     </div>
@@ -56,14 +67,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VyZnxlbnwwfHwwfHw%3D&w=1000&q=80"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Surfing</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 
@@ -80,14 +91,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/woman-hiking-at-red-rock-canyon-during-sunset-with-royalty-free-image-1601478369.jpg?crop=1.00xw:0.751xh;0,0.159xh&resize=1200:*"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Hiking</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 
@@ -104,14 +115,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/44/bb/83/escadaria-central.jpg?w=1200&h=1200&s=1"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Shopping</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.,</span>
             </div>
 
@@ -128,14 +139,14 @@
           <div class="box-content">
             <div class="image">
                <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                src="https://www.rionatural.com.br/wp-content/uploads/2015/08/StandupPaddle1.jpg"
                 class="box-img-top"
                 alt="Waterfall"
                 />
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">Stand Up Paddle</span>
               <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
             </div>
 

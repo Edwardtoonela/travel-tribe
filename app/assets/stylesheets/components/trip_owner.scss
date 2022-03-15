@@ -12,7 +12,7 @@
   padding-top: 50px;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 25px;
+  // border-radius: 25px;
   width: 100%;
   top: 15px;
 }
@@ -71,6 +71,10 @@
   justify-content: space-around;
   align-items: baseline;
   font-size: 37px;
+
+  // &:hover {
+  //   cursor: pointer;
+  // }
 }
 
 .join-btn {
@@ -83,3 +87,30 @@
   }
 }
 
+.trip-descript {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  
+  color: rgb(0, 0, 0);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+}
+
+.trip-txt-style {
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  border-radius: 8px;
+}
+
+.text-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
