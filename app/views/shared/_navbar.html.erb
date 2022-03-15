@@ -5,15 +5,25 @@
         <%= image_tag "tribe_logo_2.png" %>
       <% end %>
     </div>
-
     <div class="wrapping">
       <div class="search row">
-          <input type="text" class="searchTerm col" placeholder="search...">
-          <div type="submit" class="searchButton col">
-            <i class="fa fa-search"></i>
-          </div>
+        <%= form_with url: "/", method: :get do |form| %>
+          <%= form.label :query, "Search for:" %>
+          <%= form.text_field :query %>
+          <div class ="searchButton"><%= form.submit "Search" %> </div>
+        <% end %>
       </div>
     </div>
+
+   <!-- <div class="wrapping"> -->
+   <!--   <div class="search row"> -->
+   <!--       <input type="text" class="searchTerm col" placeholder="search..."> -->
+   <!--       <div type="submit" class="searchButton col"> -->
+   <!--         <i class="fa fa-search"></i> -->
+   <!--       </div> -->
+   <!--   </div> -->
+   <!-- </div> -->
+
 
   <div class="dropdown">
     <button class="navbar-toggler dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +36,6 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -48,4 +55,3 @@
   </div>
   </div>
 </div>
-
