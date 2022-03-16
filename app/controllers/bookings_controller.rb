@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @trip = Trip.find(params[:trip_id])
     @booking.trip = @trip
     @booking.user = current_user
@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
       redirect_to trip_path(@trip)
       flash[:notice] = "Your booking is done"
     else
-      flash[:alert] = "Oops!! You need to fill in the form!"
+      flash[:alert] = "Oops!! Something went wrong"
       render 'trips/show'
     end
   end
@@ -24,9 +24,5 @@ class BookingsController < ApplicationController
     flash[:notice] = "Your booking was successfully canceled."
   end
 
-  private
 
-  def booking_params
-    params.require(:booking).permit([:start_date, :end_date])
-  end
 end
