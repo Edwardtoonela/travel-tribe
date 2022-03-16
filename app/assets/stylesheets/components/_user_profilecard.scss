@@ -1,0 +1,38 @@
+
+.profile{
+  border-radius: 50%;
+  padding: 3px;
+  height: 128px;
+  width: 128px;
+}
+
+.profile img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  // border: 1px solid #fff;
+}
+
+.userprofile-card {
+  width: 420px;
+  height: 500px;
+  padding: 1em;
+  border: 1px solid #000000;
+  margin-left: 2em;
+}
+
+#userprofile-picture {
+  padding-top: 0.5em;
+  align-content: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#userprofile-body {
+  align-content: center;
+}
