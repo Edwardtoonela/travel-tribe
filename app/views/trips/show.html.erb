@@ -1,7 +1,7 @@
 <main class="mt-5 wrapper">
     <!-- BANNER -->
   <div class="mb-5 profile-banner">
-  
+
       <!-- TRIP CARD -->
       <div class="trip-owner">
         <div class="row">
@@ -16,9 +16,10 @@
           </div>
         </div>
           <div class="d-flex ms-4 icons">
-            <div class="btn btn-dark join-btn">Join The Trip</div>
+          <%= simple_form_for :booking, method: "get" do |f| %>
+            <%= f.button :submit, "Join The Trip", class: "btn btn-dark join-btn" %>
+          <% end %>
 
-              
               <%= link_to root_path, class: "icon" do %>
                 <%= fa_icon('heart') %>
               <% end  %>
@@ -58,7 +59,7 @@
 
             <!-- Carousel wrapper -->
         <section class="carousel-wrapper">
-        
+
         <div class="swiper mySwiper container p-0">
       <div class="swiper-wrapper content">
 
@@ -158,7 +159,7 @@
 
         <!-- END OF SINGLE BOX -->
 
-        
+
           </div>
         </div>
 
@@ -198,4 +199,3 @@
       },
     });
   </script>
-
