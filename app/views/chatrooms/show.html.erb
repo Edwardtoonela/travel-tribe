@@ -1,16 +1,18 @@
-<div class="chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-  <h1>#<%= @chatroom.name %></h1>
+<h1>#<%= @chatroom.name %></h1>
 
+<div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  
   <div class="messages" data-chatroom-subscription-target="messages">
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-      <% end %>
+        <% if message.user == current_user %>
+          <%= render 'messages/message', message: message, css_class: 'sent-message' %>
+        <% else %>
+          <%= render 'messages/message', message: message, css_class: 'received-message' %>
+        <% end %>
+      <% end  %>
     </div>
-      </div>
+  </div>
       <%= simple_form_for [@chatroom, @message],
         remote: true,
         html: {class: "d-flex"} do |f|
@@ -22,6 +24,4 @@
         %>
         <%= f.submit "Send", class: "send-btn btn btn-primary" %>
       <% end %>
-    </div>
-  </div>
 </div>
