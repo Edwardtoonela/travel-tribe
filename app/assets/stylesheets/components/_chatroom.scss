@@ -42,9 +42,7 @@
 
 .bubble {
   width: 300px;
-  margin: 50px auto;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   font-weight: 900;
   color: #fff;
@@ -53,23 +51,39 @@
   border-radius: 10px;
 }
 
-.sb1:before {
+.sent-message:before {
   content: "";
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 10px solid rgba(0, 0, 0, 0.6);
-  border-right: 10px solid transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.6);
+  border-left: 10px solid transparent;
+  border-right: 10px solid #278EFF;
+  border-top: 10px solid #278EFF;
   border-bottom: 10px solid transparent;
-  right: -20px;
+  right: 19px;
+  bottom: -20px;
+}
+
+.received-message:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #26252A;
+  border-top: 10px solid #26252A;
+  border-bottom: 10px solid transparent;
+  left: -19px;
   top: 6px;
 }
 
 .received-message {
- // Put things here
+  background-color: #26252A;
+  margin-bottom: 20px;
 }
 
 .sent-message {
   margin-left: 50%;
+  background-color: #278EFF;
+  margin-bottom: 20px;
 }
