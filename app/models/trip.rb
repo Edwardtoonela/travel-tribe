@@ -1,8 +1,8 @@
 class Trip < ApplicationRecord
   include AlgoliaSearch
-  has_many :bookmarks
-  has_many :bookings
-  has_many :reviews
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_one_attached :photo
 
   validates :description, presence: true
@@ -17,7 +17,6 @@ class Trip < ApplicationRecord
     end
     (ratings.sum.to_f / ratings.length).round(2)
   end
-
 
   algoliasearch do
     attributes :name, :description, :location
