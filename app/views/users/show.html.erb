@@ -1,0 +1,125 @@
+<main class="mt-5 wrapper">
+
+<!-- Userprofile 1st part -->
+
+  <div class="container pt-5 wrapper_profile">
+    <div class="row align-items-start">
+
+    <!-- Userprofile left half-->
+        <div class="col"style="flex: 0.6 0 0%;">
+          <div class="userprofile-card ms-4">
+            <div id="userprofile-picture">
+              <div class="mb-4 profile">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+              </div>
+              <p>Update photo</p>
+              </div>
+            <div id="userprofile-body" class="mt-4 ps-3">
+              <p>Lives in:</p>
+              <p>Speaks:</p>
+            </div>
+            <div id="reviews" class="mt-4 ps-3">
+              <p>Reviews:</p>
+            </div>
+          </div>
+        </div>
+    <!-- Userprofile beginning of right half-->
+        <div class="col">
+          <div class="container pt-2">
+            <div class="row align-items-start" style="display: contents;">
+              <div class="col">
+                <h1>Hi, I am <%= current_user.full_name %> !</h1>
+                <p>Joined <%= current_user.created_at.year %></p>
+                <div id="edit">
+                  <p>Edit</p>
+                </div>
+              </div>
+              <div class="col pt-5">
+                <h3>About me:</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised</p>
+              </div>
+              <div class="col pt-5">
+              <h3>What kind of traveler I am:</h3>
+               <ul>
+                  <li>The user answers will be displayed here</li>
+                  <li>we still have to decide whether it will be done in ther registration form or not</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Userprofile end of right half-->
+      </div>
+    </div>
+
+<!-- Userprofile 2nd part -->
+<!-- User Trips -->
+  <div class="container">
+    <h3>My trips</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- User Bookmarks -->
+  <div class="container">
+    <h3>Bookmarks</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</main>

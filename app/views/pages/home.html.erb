@@ -18,7 +18,7 @@
       <% @trips.each do |trip| %>
         <div class="col mt-1 mb-4">
         <%= link_to trip_path(trip), class: "link_to_class" do %>
-          <div class="card">
+          <div class="card" id="card-product">
             <div class="d-flex bd-highlight">
               <% if trip.photo.attached? %>
                 <%= cl_image_tag trip.photo.key, height: 300, width: 300, crop: :fill %>

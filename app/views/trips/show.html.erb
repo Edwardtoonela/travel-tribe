@@ -23,7 +23,7 @@
                 <%= fa_icon('heart') %>
               <% end  %>
 
-              <%= mail_to "me@domain.com", class: "icon" do %>
+              <%= link_to chatroom_path(@chat), class: "icon" do %>
                 <%= fa_icon('paper-plane') %>
               <% end  %>
 
