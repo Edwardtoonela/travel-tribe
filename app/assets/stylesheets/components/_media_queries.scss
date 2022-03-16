@@ -1,5 +1,15 @@
 // SMALLER MOBILE SIZE
 @media only screen and (max-width: 520px){
+  // CHAT
+
+  .chatroom {
+    width: 90%;
+  }
+
+  .bubble {
+    width: 56%;
+  }
+
   .searchButton {
     left: 214px;
   }
@@ -24,6 +34,18 @@
 
 // MOBILE SIZE
 @media only screen and (min-width: 521px) and (max-width: 767px) {
+  .chatroom {
+    width: 90%;
+  }
+
+  .chatroom h1 {
+    font-size: 18px !important;
+  }
+
+  .bubble {
+    width: 62%;
+  }
+
   .searchButton {
     left: 280px;
   }
@@ -92,6 +114,14 @@
 
 // TABLET SIZE
 @media only screen and (min-width: 768px) and (max-width: 1023px){
+  .chatroom {
+    width: 90%;
+  }
+
+  .bubble {
+    width: 52%;
+  }
+
   .searchTerm {
     margin-right: 20px;
   }
@@ -154,6 +184,14 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1380px) {
+  .chatroom {
+    width: 60%;
+  }
+
+  .bubble {
+    width: 50%;
+  }
+
   .searchButton {
     left: 448px;
   }
@@ -211,7 +249,15 @@
   }
 }
 
+@media only screen and (min-width: 1381px) {
+  .chatroom {
+    width: 60%;
+  }
 
+  .bubble {
+    width: 48%;
+  }
+}
 
 // HIDE LOGO
 @media only screen and (max-width: 1024px) {
