@@ -22,13 +22,13 @@ User.create!(full_name: 'Fabio', email: "fabio@gmail.com", password: '123456', u
 User.create!(full_name: 'Bart Simpson', email: "homer@gmail.com", password: '123456', user_name: 'Bart')
 puts "..."
 puts "Adding dummy trip and chatroom"
-amsterdam = Trip.create!(name: "Chill trip to Amsterdam", start_date: '05-07-2022', end_date: "05-22-2022", description: 'Best trip ever i can not belivev asdkfnskd fksdnf', location: 'Madafuckinggaskar', max_guests: "7", price_min: "500", price_max: "700")
+amsterdam = Trip.create!(name: "Chill trip to Amsterdam", start_date: '05-07-2022', end_date: "05-22-2022", description: 'Best trip ever i can not belivev asdkfnskd fksdnf', location: 'Madafuckinggaskar', max_guests: "7", price_min: "500", price_max: "700", user: User.first)
 Chatroom.create!(name: amsterdam.name)
 
-india = Trip.create!(name: "India awaits", start_date: '07-11-2022', end_date: "07-12-2022", description: 'Well this is going to be a big one. We are going to India for a month I can not believe it. You have to see this with your own eyes.', location: 'India', max_guests: "4", price_min: "1500", price_max: "1900")
+india = Trip.create!(name: "India awaits", start_date: '07-11-2022', end_date: "07-12-2022", description: 'Well this is going to be a big one. We are going to India for a month I can not believe it. You have to see this with your own eyes.', location: 'India', max_guests: "4", price_min: "1500", price_max: "1900", user: User.first)
 Chatroom.create!(name: india.name)
 
-nz = Trip.create!(name: "Queenstown, NZ", start_date: '09-05-2022', end_date: "10-06-2022", description: 'The coolest trip you one can do. We are going to Queenstown for a month I can not believe it. You have to see this with your own eyes.', location: 'New Zealand', max_guests: "6", price_min: "2500", price_max: "3500")
+nz = Trip.create!(name: "Queenstown, NZ", start_date: '09-05-2022', end_date: "10-06-2022", description: 'The coolest trip you one can do. We are going to Queenstown for a month I can not believe it. You have to see this with your own eyes.', location: 'New Zealand', max_guests: "6", price_min: "2500", price_max: "3500", user: User.first)
 Chatroom.create!(name: nz.name)
 puts "..."
 puts "Adding dummy ratings"
