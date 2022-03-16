@@ -8,8 +8,8 @@
   align-items: center;
   flex-grow: 1;
   // width: 60%;
-}
-  .chatroom h1 {
+
+  h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
@@ -38,6 +38,7 @@
     margin-left: 15px;
     border-radius: 5px !important;
   }
+}
 
 .bubble {
   // width: 40%;
