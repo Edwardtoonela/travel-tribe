@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :bookings
   has_many :reviews
+  has_many :trips
   has_one_attached :photo
 
   # Include default devise modules. Others available are:
