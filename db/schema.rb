@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_192931) do
+ActiveRecord::Schema.define(version: 2022_03_16_201138) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +101,8 @@ ActiveRecord::Schema.define(version: 2022_03_16_192931) do
     t.integer "max_guests"
     t.integer "price_min"
     t.integer "price_max"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,4 +130,5 @@ ActiveRecord::Schema.define(version: 2022_03_16_192931) do
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "trips"
   add_foreign_key "reviews", "users"
+  add_foreign_key "trips", "users"
 end
