@@ -40,4 +40,3 @@ Review.create!(comment: "Horrible. I cant recommend this to anyone", rating: '1'
 Review.create!(comment: "Avarage. Now sure if I can recommend this to anybody", rating: '3', user: User.first, trip: Trip.first)
 Review.create!(comment: "Horrible. I cant recommend this to anyone", rating: '2', user: User.first, trip: Trip.last)
 puts "Finished"
-
