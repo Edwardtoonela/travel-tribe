@@ -1,5 +1,18 @@
-<div class="trip-planner-div">
-  <h1>Start from scratch or template?</h1>
-  <button class="btn-default">Scratch</button>
-  <button class="btn-default template-btn">Template</button>
+<div class="modal-body" data-controller="slide-form">
+  <!--<h1>Start from scratch or template?</h1>
+  <button type="button" class="btn-default" data-bs-toggle="modal" data-bs-target="#scratchModal">Scratch</button>
+  <button type="button" class="btn-default" data-bs-toggle="modal" data-bs-target="#scratchModal">Template</button>-->
+  <%= simple_form_for @trip do |f| %>
+    <%= f.input :name, wrapper_html: { class: 'show_input', data: {slide_form_target: 'input' } } %>
+    <%= f.input :location, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :price_min, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :price_max, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :start_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :end_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :description, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :max_guests, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :photo, as: :file, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.submit class: 'hide_input', data: { slide_form_target: 'input' } %>
+  <% end %>
+  <button data-action='click->slide-form#next' data-slide-form-target='next'>Next.</button>
 </div>

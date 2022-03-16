@@ -1,4 +1,12 @@
-.trip-planner-div {
+.show_input {
+  display: block;
+}
+
+.hide_input {
+  display: none
+}
+
+.modal-body {
   display: flex;
   flex-direction: column;
   margin: 25vw;
@@ -6,7 +14,7 @@
   align-items: center;
 }
 
-.trip-planner-div button {
+.modal-body button {
   background-color: white;
   border-color: black;
   border-radius: 10px;
@@ -14,7 +22,7 @@
   width: 25vw;
 }
 
-.trip-planner-div button:hover {
+.modal-body button:hover {
   background-color: black;
   color: white;
 }
