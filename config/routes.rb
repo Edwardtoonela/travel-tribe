@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   # === CHATROOM === #
   
-  resources :chatrooms, only: :show
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
