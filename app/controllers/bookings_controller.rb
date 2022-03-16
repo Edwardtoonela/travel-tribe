@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
     @booking.trip = @trip
     @booking.user = current_user
+    @booking.status = "pending"
 
     authorize @booking
 
@@ -23,6 +24,12 @@ class BookingsController < ApplicationController
     redirect_to users,
     flash[:notice] = "Your booking was successfully canceled."
   end
+
+  def accept
+    @booking = Booking.find(booking)
+    @booking.status = "confirmed"
+  end
+
 
 
 end
