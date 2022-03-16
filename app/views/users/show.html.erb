@@ -1,0 +1,19 @@
+<main class="mt-5 wrapper">
+  <div class="container">
+      <div class="row align-items-start">
+
+        <div class="col">
+          <div class="profile">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+          </div>
+        </div>
+
+        <div class="col">
+          <h1>Hi, I am <%= current_user.full_name %> !</h1>
+          <p> Joined <%= current_user.created_at.year %></p>
+        </div>
+
+      </div>
+      <div class="push"></div>
+  </div>
+</main>
