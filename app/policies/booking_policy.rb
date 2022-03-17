@@ -11,7 +11,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    user
   end
 
 end

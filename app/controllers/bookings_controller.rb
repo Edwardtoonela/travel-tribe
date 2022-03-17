@@ -2,8 +2,10 @@ class BookingsController < ApplicationController
 
 
   def index
-    authorize current_user
-    @booking = Booking.all
+    #@booking = Booking.all
+    @bookings = policy_scope(Booking)
+    authorize @bookings
+
   end
 
   def create
