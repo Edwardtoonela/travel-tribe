@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
       flash[:notice] = "Your booking is done"
     else
       flash[:alert] = "Oops!! Something went wrong"
-      render 'trips/show'
+      redirect_to trip_path(@trip)
     end
   end
 
