@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_many :trips
   has_many :bookmarks, dependent: :destroy
   has_many :bookings, dependent: :destroy

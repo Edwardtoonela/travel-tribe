@@ -1,7 +1,7 @@
-  <div class="<%= css_class %> bubble" id="message-<%= message.id %>">
-    <small class="user-msg">
-     <%= message.user.user_name %>
-     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-    </small>
-    <p><%= message.content %></p>
-  </div>
+<div class="<%= local_assigns[:css_class] %> bubble" id="message-<%= message.id %>" data-sender-id="<%= message.user.id %>">
+  <i class="text-right">
+    <span><%= message.user.user_name %></span>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+  </i>
+  <p><%= message.content %></p>
+</div>
