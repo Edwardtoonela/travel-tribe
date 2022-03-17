@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  after_create :send_welcome_email
   has_many :trips
   has_many :bookmarks, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -14,4 +14,10 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true
   validates :user_name, presence: true, length: { minimum: 3 }
+
+  private
+
+  def send_join_email
+    UserMailer.with(user: self).join.deliver_now
+  end
 end
