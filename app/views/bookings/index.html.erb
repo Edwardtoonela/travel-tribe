@@ -4,10 +4,12 @@
       <% trip.bookings.select { |booking| booking.status == "pending" }.each do |booking| %>
         <div class="card">
           <div class="card-body">
-            <%= trip.name %>
+            <h4>Request to join "<%= trip.name %>" by:</h4>
             <%= booking.user.full_name %>
-             <%= link_to "Accept", accept_trip_booking_path(trip, booking), class: "btn btn-primary", method: "POST" %>
-             <%= link_to "Reject", reject_trip_booking_path(trip, booking), class: "btn btn-primary", method: "POST" %>
+            <div id="trip-status-update">
+              <%= link_to "Reject💔", reject_trip_booking_path(trip, booking), class: "btn btn-small" , method: "POST" %>
+              <%= link_to "Accept🎉", accept_trip_booking_path(trip, booking), class: "btn btn-small", method: "POST" %>
+            </div>
           </div>
         </div>
       <% end %>
