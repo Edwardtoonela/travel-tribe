@@ -10,7 +10,12 @@
           <div class="userprofile-card ms-4">
             <div id="userprofile-picture">
               <div class="mb-4 profile">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+                <% if current_user.photo.attached? %>
+                  <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+                <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
               </div>
               <p>Update photo</p>
               </div>
@@ -61,7 +66,11 @@
     <% current_user.bookings.first(3).each do |booking| %>
       <div class="col">
         <div class="card h-100">
-          <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
+          <% if booking.trip.photo.attached? %>
+            <%= cl_image_tag booking.trip.photo.key, height: 80, width: 100, crop: :fill %>
+          <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <% end %>
           <div class="card-body">
             <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
             <p class="card-text">Location: <%= booking.trip.location %></p>
