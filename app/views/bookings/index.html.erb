@@ -1,3 +1,20 @@
+  <div class="container mb-3">
+    <h3>Pending Requests</h3>
+    <% current_user.trips.each do |trip| %>
+      <% trip.bookings.select { |booking| booking.status == "pending" }.each do |booking| %>
+        <div class="card">
+          <div class="card-body">
+            <%= trip.name %>
+            <%= booking.user.full_name %>
+             <%= link_to "Accept", accept_trip_booking_path(trip, booking), class: "btn btn-primary", method: "POST" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
   <div class="container">
     <h3>Bookings</h3>
 
@@ -10,7 +27,7 @@
             <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
             <p class="card-text">Location: <%= booking.trip.location %></p>
             <p class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></p>
-           <!-- <p class="card-text"><%= booking.status %></p> -->
+           <p class="card-text"><%= booking.status %></p>
           </div>
         </div>
       </div>
