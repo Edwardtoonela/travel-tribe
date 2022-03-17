@@ -1,4 +1,4 @@
-<div data-controller='chatroom-subscription' class="container chatroom">
+<div data-controller='chatroom-subscription' class="container chatroom mx-auto">
 
   <h1>#<%= @chatroom.name %></h1>
   <div class="messages" id="messages" data-chatroom-subscription-target='messages' data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
@@ -16,7 +16,8 @@
     <%= simple_form_for [@chatroom, @message],
       remote: true,
       html: {data: {
-        chatroom_subscription_target: 'form'}, 
+        chatroom_subscription_target: 'form',
+        action: "ajax:success->chatroom-subscription#resetForm"}, 
         class: "d-flex #new_message" } do |f|
     %>
       <%= f.input :content,

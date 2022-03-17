@@ -28,7 +28,11 @@ export default class extends Controller {
     }
   };
 
-    
+  resetForm(event) {
+    event.target.reset()
+  }
+
+
   insertIntoDOM = (messageHTML, currentUserId, messages) => {
     // create an empty div
     const message = document.createElement('div') // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement
