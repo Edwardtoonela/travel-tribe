@@ -46,4 +46,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.status = "rejected"
+    authorize @booking
+    if @booking.save
+      redirect_to bookings_path
+      flash[:notice] = "The booking has been rejected"
+    else
+      flash[:alert] = "Oops!! Something went wrong"
+      render "bookings/index"
+    end
+  end
+
 end
