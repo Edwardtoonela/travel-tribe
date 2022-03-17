@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
     #@booking = Booking.all
     @bookings = policy_scope(Booking)
     authorize @bookings
-
   end
 
   def create
@@ -23,7 +22,7 @@ class BookingsController < ApplicationController
       redirect_to trip_path(@trip)
     else
       flash[:alert] = "Oops!! Something went wrong"
-      render 'trips/show'
+      redirect_to trip_path(@trip)
     end
     
   end
@@ -37,7 +36,28 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(booking)
+    @booking = Booking.find(params[:id])
     @booking.status = "confirmed"
+    authorize @booking
+    if @booking.save
+      redirect_to bookings_path
+      flash[:notice] = "The booking has been accepted"
+    else
+      flash[:alert] = "Oops!! Something went wrong"
+      render "bookings/index"
+    end
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.status = "rejected"
+    authorize @booking
+    if @booking.save
+      redirect_to bookings_path
+      flash[:notice] = "The booking has been rejected"
+    else
+      flash[:alert] = "Oops!! Something went wrong"
+      render "bookings/index"
+    end
   end
 end

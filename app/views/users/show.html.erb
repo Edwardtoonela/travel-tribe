@@ -58,7 +58,7 @@
     </div>
 
 <!-- Userprofile 2nd part -->
-<!-- User Trips -->
+<!-- User Bookings -->
   <div class="container">
     <h3>Bookings</h3>
     <div class="mb-2"><%= link_to "See all", bookings_path(current_user) %></div>
@@ -75,7 +75,7 @@
             <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
             <p class="card-text">Location: <%= booking.trip.location %></p>
             <p class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></p>
-           <!-- <p class="card-text"><%= booking.status %></p> -->
+            <p class="card-text"><%= booking.status %></p>
           </div>
         </div>
       </div>
