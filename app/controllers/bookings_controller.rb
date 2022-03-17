@@ -18,12 +18,14 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to trip_path(@trip)
       flash[:notice] = "Your booking is done"
+      UserMailer.with(user: @trip.user).join.deliver_now
+      redirect_to trip_path(@trip)
     else
       flash[:alert] = "Oops!! Something went wrong"
       render 'trips/show'
     end
+    
   end
 
   def destroy
@@ -38,7 +40,4 @@ class BookingsController < ApplicationController
     @booking = Booking.find(booking)
     @booking.status = "confirmed"
   end
-
-
-
 end
