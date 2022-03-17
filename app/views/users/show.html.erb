@@ -55,27 +55,27 @@
 <!-- Userprofile 2nd part -->
 <!-- User Trips -->
   <div class="container">
-    <h3>My trips</h3>
-
-    <% current_user.bookings.each do |booking| %>
+    <h3>Bookings</h3>
+    <div class="mb-2"><%= link_to "See all", bookings_path(current_user) %></div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% current_user.bookings.first(3).each do |booking| %>
       <div class="col">
         <div class="card h-100">
-          <img <%= booking.trip.photo %>class="card-img-top" alt="...">
+          <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
           <div class="card-body">
-            <h5 class="card-title"><%= booking.trip.name %></h5>
-            <p class="card-text"><%= booking.trip.location %></p>
-            <p class="card-text">Date: <%= booking.trip.start_date %> - < class="card-text"><%= booking.trip.end_date %></p>
+            <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
+            <p class="card-text">Location: <%= booking.trip.location %></p>
+            <p class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></p>
            <!-- <p class="card-text"><%= booking.status %></p> -->
           </div>
         </div>
       </div>
-    </div>
     <% end %>
+    </div>
   </div>
 <!-- User Bookmarks -->
   <div class="container">
-    <h3>Bookmarks</h3>
+    <h3>Favorites</h3>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
