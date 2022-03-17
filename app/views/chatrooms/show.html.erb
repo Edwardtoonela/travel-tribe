@@ -8,9 +8,9 @@
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <% if message.user == current_user %>
-        <%= render 'messages/message', message: message, css_class: 'sent-message' %>
+        <%= render 'messages/message', message: message, css_class: 'sent-message bubble' %>
       <% else %>
-        <%= render 'messages/message', message: message, css_class: 'received-message' %>
+        <%= render 'messages/message', message: message, css_class: 'received-message bubble' %>
       <% end %>
     <% end  %>
   </div>

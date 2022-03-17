@@ -1,7 +1,7 @@
-  <div class="<%= css_class %> bubble" id="message-<%= message.id %>">
+  <div class="<%= css_class %>" id="message-<%= message.id %>">
     <small class="user-msg">
-     <%= message.user.user_name %>
+     <%= message.user.user_name %> -
      <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
     </small>
-    <p><%= message.content %></p>
+    <p class="msg"><%= message.content %></p>
   </div>
