@@ -1,0 +1,21 @@
+  <div class="container">
+    <h3>Bookings</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
+    <% current_user.bookings.each do |booking| %>
+      <div class="col">
+        <div class="card h-100">
+          <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
+          <div class="card-body">
+            <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
+            <p class="card-text">Location: <%= booking.trip.location %></p>
+            <p class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></p>
+           <!-- <p class="card-text"><%= booking.status %></p> -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+    <div class="push"></div>

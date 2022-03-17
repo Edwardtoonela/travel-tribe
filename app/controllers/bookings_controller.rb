@@ -1,4 +1,13 @@
 class BookingsController < ApplicationController
+
+
+  def index
+    #@booking = Booking.all
+    @bookings = policy_scope(Booking)
+    authorize @bookings
+
+  end
+
   def create
     @booking = Booking.new
     @trip = Trip.find(params[:trip_id])
