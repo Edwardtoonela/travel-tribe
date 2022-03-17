@@ -27,8 +27,8 @@
             <% end %>
           <% end %>
 
-              <%= link_to root_path, class: "icon" do %>
-                <%= fa_icon('heart') %>
+              <%= simple_form_for [@trip, @bookmark] do |f| %>
+                <%= f.button :submit, "bookmark", class: "btn btn-dark join-btn" %>
               <% end %>
 
               <%= link_to chatroom_path(@chat), class: "icon" do %>

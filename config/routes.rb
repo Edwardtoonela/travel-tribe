@@ -5,16 +5,17 @@ Rails.application.routes.draw do
 
   get '/search', to: 'trips#search'
   resources :bookings, only: [:index]
+  resources :bookmarks, only: [:index]
   resources :users, only: [:show]
   resources :trips do
+    resources :reviews, only: %i[create destroy]
+    resources :bookmarks, only: %i[create destroy]
     resources :bookings, only: %i[create destroy] do
       member do
         post :accept
         post :reject
       end
     end
-    resources :reviews, only: %i[new create destroy]
-    resources :bookmarks, only: %i[new create destroy]
   end
 
   # === CHATROOM === #
