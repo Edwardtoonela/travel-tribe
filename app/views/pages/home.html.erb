@@ -25,7 +25,6 @@
               <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <% end %>
-              <!--<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />-->
               <div class="p-3 flex-fill bd-highlight">
                 <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
                 <ul>
@@ -36,8 +35,20 @@
                   <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>
                   <p class="mb-1 mt-2"> Tribe members:</p>
                 </div>
-                <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
-                <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
+                  <% if trip.user.photo.attached? %>
+                    <%= cl_image_tag trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                  <% else %>
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                  <% end %>
+                  <% trip.bookings.each do |booking| %>
+                    <% if booking.user.photo.attached? %>
+                      <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                    <% else %>
+                      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                    <% end %>
+                  <% end %>
+                <!--<img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
+                <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">-->
               </div>
 
               <div class="p-3 flex-fill bd-highlight">
