@@ -10,8 +10,9 @@ current_datetime = DateTime.now
 
 # DESTROY ALL
 puts "Clening DataBase"
-User.destroy_all
+Message.destroy_all
 Trip.destroy_all
+User.destroy_all
 Chatroom.destroy_all
 puts "..."
 puts "Data Base is clean!"
