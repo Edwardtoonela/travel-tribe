@@ -7,7 +7,7 @@ class Trip < ApplicationRecord
   belongs_to :user
 
   validates :description, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
   validates :name, presence: true
   validates :price_max, presence: true
   validates :price_min, presence: true
