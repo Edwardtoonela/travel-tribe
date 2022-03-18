@@ -11,7 +11,7 @@
             <div id="userprofile-picture">
               <div class="mb-4 profile">
                 <% if @user.photo.attached? %>
-                  <%= cl_image_tag @user.photo.key %>
+                  <%= cl_image_tag @user.photo.key, height: 128, width: 128, crop: :fill %>
                 <% else %>
                   <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
                 <% end %>

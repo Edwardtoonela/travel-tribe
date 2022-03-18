@@ -10,7 +10,7 @@
           <!-- PROFILE -->
             <div class="profile-img">
               <% if @trip.user.photo.attached? %>
-                <%= cl_image_tag @trip.user.photo.key %>
+                <%= cl_image_tag @trip.user.photo.key, width: 170, height: 170, crop: :fill %>
               <% else %>
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
               <% end %>
