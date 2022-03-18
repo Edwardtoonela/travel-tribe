@@ -36,3 +36,12 @@
 #userprofile-body {
   align-content: center;
 }
+
+.edit-profile {
+  color: black;
+  text-decoration: underline;
+
+    & :hover {
+      color: dimgray;
+    }
+}

@@ -36,13 +36,13 @@
                   <p class="mb-1 mt-2"> Tribe members:</p>
                 </div>
                   <% if trip.user.photo.attached? %>
-                    <%= cl_image_tag trip.user.photo.key, class: "profile-icon" %>
+                    <%= cl_image_tag trip.user.photo.key, height: 50, width: 50, crop: :fill, class: "profile-icon" %>
                   <% else %>
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
                   <% end %>
                   <% trip.bookings.each do |booking| %>
                     <% if booking.user.photo.attached? %>
-                      <%= cl_image_tag booking.user.photo.key, class: "profile-icon" %>
+                      <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :fill, class: "profile-icon" %>
                     <% else %>
                       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
                     <% end %>
