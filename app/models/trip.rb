@@ -7,10 +7,14 @@ class Trip < ApplicationRecord
   belongs_to :user
 
   validates :description, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
   validates :name, presence: true
   validates :price_max, presence: true
   validates :price_min, presence: true
+
+  # geocode (map)
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def average_rating
     ratings= reviews.map do |review|
@@ -20,7 +24,7 @@ class Trip < ApplicationRecord
   end
 
   algoliasearch do
-    attributes :name, :description, :location
+    attributes :name, :description, :address
     searchableAttributes ['name', 'description']
   end
   # 'trip.averaga_rating'

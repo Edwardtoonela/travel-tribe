@@ -23,3 +23,10 @@ User.create!(full_name: 'Fabio', email: "fabio@gmail.com", password: '123456', u
 User.create!(full_name: 'Bart Simpson', email: "homer@gmail.com", password: '123456', user_name: 'Bart')
 puts "..."
 puts "Finished"
+
+# CREATING TRIP
+
+# puts 'creating a trip'
+# puts "..."
+# new_trip = Trip.create(start_date: '01-05-2023', end_date:'03-05-2023', description: "Trip to Le Wagon HQ", address: "16 Villa Gaudelet, Paris", name: "Le Wagon HQ", max_guests: 8, price_min: 2000, price_max: 3200, latitude: 48.8648472, longitude: 2.3798534, user_id: 1, location: "Paris")
+# puts "Finished"

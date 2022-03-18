@@ -1,12 +1,16 @@
 #card-product {
   overflow: hidden;
   height: 300px;
-  width: 830px;
+  width: 800px;
+  margin-left: 72px;
   background: white;
-  /* box-shadow: 0 0 15px rgb(0 0 0 / 20%); */
-  // display: flex;
-  border-radius: 30px;
-  border: 1px solid #000000;
+  border-radius: 15px;
+  box-shadow: 2px 2px #bbb6b6;
+  border: 1px solid #bbb6b6;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 #card-product img {
@@ -48,4 +52,15 @@
   &:hover{
     color: rgba(0, 0, 0, 0.5);
   }
+} 
+
+.home-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+}
+.map{
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }

@@ -12,34 +12,28 @@
       <div class="pre-card-animation">
         <h1>Trips all over Rio de Janeiro</h1>
       </div>
-
-    <div class="container">
-      <div class="row" style="flex-direction: column;">
-      <% @trips.each do |trip| %>
-        <div class="col mt-1 mb-4">
-        <%= link_to trip_path(trip), class: "link_to_class" do %>
-          <div class="card" id="card-product">
-            <div class="d-flex bd-highlight">
-              <% if trip.photo.attached? %>
-                <%= cl_image_tag trip.photo.key %>
-              <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <% end %>
-              <div class="p-3 flex-fill bd-highlight">
-                <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
-                <ul>
-                  <li><h4 class="mb-2 mt-1"> <%= trip.start_date %><%= trip.end_date %></h4></li>
-                  <li><h4 class="mb-2 mt-1"> <%= trip.max_guests %> people</h4></li>
-                </ul>
-                <div class="infos">
-                  <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>
-                  <p class="mb-1 mt-2"> Tribe members:</p>
-                </div>
-                  <% if trip.user.photo.attached? %>
-                    <%= cl_image_tag trip.user.photo.key, height: 50, width: 50, crop: :fill, class: "profile-icon" %>
+    <div class="home-layout">
+      <div class="trip-card">
+        <div class="col-8">
+          <% @trips.each do |trip| %>
+            <div class="col mt-1 mb-4">
+            <%= link_to trip_path(trip), class: "link_to_class" do %>
+              <div class="card" id="card-product">
+                <div class="d-flex bd-highlight">
+                  <% if trip.photo.attached? %>
+                    <%= cl_image_tag trip.photo.key, height: 300, width: 300, crop: :fill %>
                   <% else %>
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                    <img src="https://cdn.pixabay.com/photo/2015/06/11/08/58/cappadocia-805624_1280.jpg" />
                   <% end %>
+                  <div class="p-3 flex-fill bd-highlight">
+                    <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
+                    <ul>
+                      <li><h4 class="mb-2 mt-1"> <%= trip.start_date %><%= trip.end_date %></h4></li>
+                      <li><h4 class="mb-2 mt-1"> <%= trip.max_guests %> people</h4></li>
+                    </ul>
+                    <div class="infos">
+                      <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>
+                      <p class="mb-1 mt-2"> Tribe members:</p>
                   <% trip.bookings.each do |booking| %>
                     <% if booking.user.photo.attached? %>
                       <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :fill, class: "profile-icon" %>
@@ -64,31 +58,44 @@
                       <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
                       <button type="button" class="btn btn-small btn-dark">Dark</button>
                     </div>
-                    <div class="row mb-1">
-                      <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
-                      <button type="button" class="btn btn-small btn-dark">Dark</button>
-                    </div>
-                    <div class="row">
-                      <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
-                      <button type="button" class="btn btn-small btn-dark">Dark</button>
+                      <% if trip.user.photo.attached? %>
+                        <%= cl_image_tag trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                      <% else %>
+                        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                      <% end %>
+                      <% trip.bookings.each do |booking| %>
+                        <% if booking.user.photo.attached? %>
+                          <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                        <% else %>
+                          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                        <% end %>
+                      <% end %>
+                    <!--<img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
+                    <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">-->
+                  </div>
+                        </div>
+                      </div>
+                    <div class="price">
+                      <p>Price estimate: </p>
+                      <h3> <%= trip.price_min %> - <%= trip.price_max %></h3>
                     </div>
                   </div>
-                <div class="price">
-                  <p>Price estimate: </p>
-                  <h3> <%= trip.price_min %> - <%= trip.price_max %></h3>
                 </div>
               </div>
+              <% end %>
             </div>
-          </div>
           <% end %>
         </div>
-      <% end %>
-        <!-- MAP STARTS HERE -->
-
-        <div class="map">
-
-          <img id="map" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/Map%20placeholder.png'>
-        </div>
     </div>
+        <!-- === MAP STARTS HERE === -->
+
+      <div 
+        class="map"
+        style="width: 100%; height: 600px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
       <div class="push"></div>
   </div>
