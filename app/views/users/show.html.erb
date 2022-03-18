@@ -15,18 +15,14 @@
                 <% else %>
                   <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
                 <% end %>
+              </div>
                 <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
-              </div>
-              <!--<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#pfpModal">Update photo</button>
-              <p>Update photo</p>
-              <div class="modal fade" id="pfpModal">
-                <div class="modal-body">-->
-                <% if @user == current_user %>
-                  <%= link_to "edit profile", edit_user_registration_path(@user), class: "edit-profile" %>
-                <% end %>
-                </div>
-              </div>
-              </div>
+            </div>
+            <div>
+              <% if @user == current_user %>
+                <%= link_to "edit profile", edit_user_registration_path(@user), class: "edit-profile" %>
+              <% end %>
+            </div>
             <div id="userprofile-body" class="mt-4 ps-3">
               <p>Lives in:</p>
               <p>Speaks:</p>
