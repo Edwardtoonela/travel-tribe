@@ -1,7 +1,37 @@
 // === MEDIA QUERY === //
-@media only screen and (max-width: 1390px) {
-  .map {
+// @media only screen and (max-width: 1390px) {
+//   .map {
+//     display: none;
+//   }
+// }
+
+.mapboxgl-popup {
+  max-width: 200px;
+  padding: 15px;
+  margin: 10px;
+
+  &:active  {
     display: none;
   }
 }
 
+.mapboxgl-popup-content {
+  text-align: center;
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 25px;
+  color: rgb(47, 132, 189);
+  border: none;
+
+  &:hover {
+    color: red;
+    background-color: none;
+  }
+}
+
+.map-image {
+  max-width:100%;
+  max-height:100%;
+  border-radius: 10px;
+}

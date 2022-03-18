@@ -1,10 +1,13 @@
-<%= render 'pages/info_window' %>
-<div class="container">
-  <div class="container">
-    <h2><%= trip.name %></h2>
+
+  <div class="">
+    <h2 class="map-title"><%= trip.name %></h2>
     <p><%= trip.address %></p>
   </div>   
-  <div class="container">
-  <%# PUT IMAGE HERE %>
+  <div class="">
+    <% if trip.photo.attached? %>
+      <%= cl_image_tag trip.photo.key, class:"map-image" %>
+    <% else %>
+      <img class="map-image" src="https://cdn.pixabay.com/photo/2015/06/11/08/58/cappadocia-805624_1280.jpg" />
+    <% end %>
   </div>
-</div>
+

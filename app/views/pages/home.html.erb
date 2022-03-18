@@ -23,7 +23,7 @@
               <% if trip.photo.attached? %>
                 <%= cl_image_tag trip.photo.key, height: 300, width: 300, crop: :fill %>
               <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+                <img src="https://cdn.pixabay.com/photo/2015/06/11/08/58/cappadocia-805624_1280.jpg" />
               <% end %>
               <div class="p-3 flex-fill bd-highlight">
                 <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>

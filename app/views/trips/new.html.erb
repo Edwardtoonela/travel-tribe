@@ -4,7 +4,7 @@
   <button type="button" class="btn-default" data-bs-toggle="modal" data-bs-target="#scratchModal">Template</button>-->
   <%= simple_form_for @trip do |f| %>
     <%= f.input :name, wrapper_html: { class: 'show_input', data: {slide_form_target: 'input' } } %>
-    <%= f.input :location, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :address, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.input :price_min, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.input :price_max, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.input :start_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
