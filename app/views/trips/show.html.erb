@@ -30,9 +30,9 @@
               <% unless @trip.user == current_user %>
                 <% if @user_bookmark.nil? %>
                   <%= simple_form_for [@trip, @bookmark] do |f| %>
-                  <div class ="icon">
-                    <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "bookmark") %>
-                  </div>
+                    <div class ="icon">
+                      <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "bookmark") %>
+                    </div>
                   <% end %>
                 <% else %>
                   <%= link_to bookmark_path(@user_bookmark), method:"delete", class:"icon" do%>

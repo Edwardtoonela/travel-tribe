@@ -6,6 +6,7 @@ class TripsController < ApplicationController
     authorize @trip
     @booking = Booking.new
     @chat = Chatroom.find_by_name(@trip.name)
+    @bookmark = Bookmark.new
   end
 
   def new
