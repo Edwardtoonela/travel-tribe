@@ -10,15 +10,19 @@
           <div class="userprofile-card ms-4">
             <div id="userprofile-picture">
               <div class="mb-4 profile">
-                <% if current_user.photo.attached? %>
-                  <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% if @user.photo.attached? %>
+                  <%= cl_image_tag @user.photo.key, height: 128, width: 128, crop: :fill %>
                 <% else %>
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
                 <% end %>
+              </div>
                 <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
-              </div>
-              <p>Update photo</p>
-              </div>
+            </div>
+            <div>
+              <% if @user == current_user %>
+                <%= link_to "edit profile", edit_user_registration_path(@user), class: "edit-profile" %>
+              <% end %>
+            </div>
             <div id="userprofile-body" class="mt-4 ps-3">
               <p>Lives in:</p>
               <p>Speaks:</p>
@@ -33,11 +37,13 @@
           <div class="container pt-2">
             <div class="row align-items-start" style="display: contents;">
               <div class="col">
-                <h1>Hi, I am <%= current_user.full_name %> !</h1>
-                <p>Joined <%= current_user.created_at.year %></p>
-                <div id="edit">
-                  <p>Edit</p>
-                </div>
+                <h1>Hi, I am <%= @user.full_name %> !</h1>
+                <p>Joined <%= @user.created_at.year %></p>
+                <% if @user == current_user %>
+                  <div id="edit">
+                    <p>Edit</p>
+                  </div>
+                <% end %>
               </div>
               <div class="col pt-5">
                 <h3>About me:</h3>
@@ -61,13 +67,13 @@
 <!-- User Bookings -->
   <div class="container">
     <h3>Bookings</h3>
-    <div class="mb-2"><%= link_to "See all", bookings_path(current_user) %></div>
+    <div class="mb-2"><%= link_to "See all", bookings_path(@user) %></div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% current_user.bookings.first(3).each do |booking| %>
+    <% @user.bookings.first(3).each do |booking| %>
       <div class="col">
         <div class="card h-100">
           <% if booking.trip.photo.attached? %>
-            <%= cl_image_tag booking.trip.photo.key, height: 80, width: 100, crop: :fill %>
+            <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
           <% else %>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
           <% end %>

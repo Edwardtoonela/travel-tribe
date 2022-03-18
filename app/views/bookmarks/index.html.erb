@@ -1,0 +1,22 @@
+  <div class="container">
+    <h3>Favorites</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
+    <% current_user.bookmarks.each do |bookmark| %>
+      <div class="col">
+      <%= link_to trip_path(bookmark.trip), class: "link_to_class" do %>
+        <div class="card h-100">
+          <%= cl_image_tag bookmark.trip.photo.key, class: "card-img-top"%>
+          <div class="card-body">
+            <h5 class="card-title">Trip name: <%= bookmark.trip.name %></h5>
+            <p class="card-text">Location: <%= bookmark.trip.location %></p>
+            <p class="card-text"> Date: <%= bookmark.trip.start_date %> - <%= bookmark.trip.end_date %></p>
+          </div>
+        </div>
+      <% end  %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+    <div class="push"></div>
