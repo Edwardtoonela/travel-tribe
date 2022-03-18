@@ -28,7 +28,7 @@
           <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
           <div class="card-body">
             <h5 class="card-title">Trip name: <%= booking.trip.name %></h5>
-            <p class="card-text">Location: <%= booking.trip.location %></p>
+            <p class="card-text">Location: <%= booking.trip.address %></p>
             <p class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></p>
            <p class="card-text"><%= booking.status %></p>
           </div>
