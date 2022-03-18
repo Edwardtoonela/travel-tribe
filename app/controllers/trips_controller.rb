@@ -5,7 +5,10 @@ class TripsController < ApplicationController
     def show
       authorize @trip
       @booking = Booking.new
+      @bookmark = Bookmark.new
+      @user_bookmark = @trip.bookmarks.find_by(user: current_user)
       @chat = Chatroom.find_by_name(@trip.name)
+
     end
 
     def new
