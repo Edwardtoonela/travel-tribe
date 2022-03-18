@@ -2,18 +2,6 @@ class TripsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_trip, only: %i[show edit update destroy]
 
-  def index
-    @trips = Trip.all
-
-    # the `geocoded` scope filters only trips with coordinates (latitude & longitude)
-    @markers = @trips.geocoded.map do |trip|
-      {
-        lat: trip.latitude,
-        lng: trip.longitude
-      }
-    end
-  end
-
   def show
     authorize @trip
     @booking = Booking.new
