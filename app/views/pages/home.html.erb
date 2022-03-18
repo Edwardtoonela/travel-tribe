@@ -21,7 +21,7 @@
           <div class="card" id="card-product">
             <div class="d-flex bd-highlight">
               <% if trip.photo.attached? %>
-                <%= cl_image_tag trip.photo.key, height: 300, width: 300, crop: :fill %>
+                <%= cl_image_tag trip.photo.key %>
               <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <% end %>
@@ -36,13 +36,13 @@
                   <p class="mb-1 mt-2"> Tribe members:</p>
                 </div>
                   <% if trip.user.photo.attached? %>
-                    <%= cl_image_tag trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                    <%= cl_image_tag trip.user.photo.key, class: "profile-icon" %>
                   <% else %>
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
                   <% end %>
                   <% trip.bookings.each do |booking| %>
                     <% if booking.user.photo.attached? %>
-                      <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                      <%= cl_image_tag booking.user.photo.key, class: "profile-icon" %>
                     <% else %>
                       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
                     <% end %>
