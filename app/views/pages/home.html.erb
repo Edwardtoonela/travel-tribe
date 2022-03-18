@@ -13,8 +13,8 @@
         <h1>Trips all over Rio de Janeiro</h1>
       </div>
 
-    <div class="container">
-      <div class="row trip-card">
+    <div class="home-layout">
+      <div class="trip-card">
         <div class="col-8">
           <% @trips.each do |trip| %>
             <div class="col mt-1 mb-4">
@@ -85,17 +85,16 @@
             </div>
           <% end %>
         </div>
-
+    </div>
         <!-- === MAP STARTS HERE === -->
 
       <div 
-        class="map col-4"
+        class="map"
         style="width: 100%; height: 600px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
 
-    </div>
       <div class="push"></div>
   </div>
