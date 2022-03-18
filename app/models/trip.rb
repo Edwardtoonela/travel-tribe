@@ -12,6 +12,10 @@ class Trip < ApplicationRecord
   validates :price_max, presence: true
   validates :price_min, presence: true
 
+  # geocode (map)
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def average_rating
     ratings= reviews.map do |review|
       review.rating
