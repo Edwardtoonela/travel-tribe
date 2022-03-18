@@ -24,7 +24,7 @@ class Trip < ApplicationRecord
   end
 
   algoliasearch do
-    attributes :name, :description, :location
+    attributes :name, :description, :address
     searchableAttributes ['name', 'description']
   end
   # 'trip.averaga_rating'

@@ -20,7 +20,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     Chatroom.create(name: @trip.name)
-    # @chat = Chatroom.find_by_name(@trip.name)
+    @chat = Chatroom.find_by_name(@trip.name)
 
     authorize @trip
     if @trip.save

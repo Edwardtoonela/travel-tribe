@@ -8,12 +8,6 @@
               input_html: { class:'d-none', data: { geocoder_target: "address" } },
               wrapper_html: { class: 'hide_input', data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'], slide_form_target: 'input' } } %>
 
-
-
-
-
-
-
     <%= f.input :price_min, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.input :price_max, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.input :start_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
