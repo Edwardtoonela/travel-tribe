@@ -22,4 +22,11 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+
+    @bookmark.destroy
+
+  end
 end

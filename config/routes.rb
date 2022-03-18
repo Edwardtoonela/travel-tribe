@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   get '/search', to: 'trips#search'
   resources :bookings, only: [:index]
-  resources :bookmarks, only: [:index]
+  resources :bookmarks, only: [:index, :destroy]
   resources :users, only: [:show]
   resources :trips do
     resources :reviews, only: %i[create destroy]
-    resources :bookmarks, only: %i[create destroy]
+    resources :bookmarks, only: %i[create]
     resources :bookings, only: %i[create destroy] do
       member do
         post :accept

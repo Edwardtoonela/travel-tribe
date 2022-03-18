@@ -27,8 +27,12 @@
             <% end %>
           <% end %>
 
-              <%= simple_form_for [@trip, @bookmark] do |f| %>
-                <%= f.button :submit, "bookmark", class: "btn btn-dark join-btn" %>
+              <% if @user_bookmark.nil? %>
+                <%= simple_form_for [@trip, @bookmark] do |f| %>
+                  <%= f.button :submit, "bookmark", class: "btn btn-dark join-btn" %>
+                <% end %>
+              <% else %>
+                <%= link_to "destroy", bookmark_path(@user_bookmark), method:"delete" %>
               <% end %>
 
               <%= link_to chatroom_path(@chat), class: "icon" do %>
