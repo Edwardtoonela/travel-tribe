@@ -29,7 +29,9 @@
 
               <% if @user_bookmark.nil? %>
                 <%= simple_form_for [@trip, @bookmark] do |f| %>
-                  <%= f.button :submit, "bookmark", class: "btn btn-dark join-btn" %>
+                 <%= f.submit do %>
+                    <%= cl_image_tag('https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg', class: "icon") %>
+                  <% end %>
                 <% end %>
               <% else %>
                 <%= link_to "destroy", bookmark_path(@user_bookmark), method:"delete" %>

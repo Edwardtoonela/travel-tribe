@@ -24,9 +24,12 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    @trip = @bookmark.trip
     authorize @bookmark
 
     @bookmark.destroy
+
+    redirect_to trip_path(@trip)
 
   end
 end
