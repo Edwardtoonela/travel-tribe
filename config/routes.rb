@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/search', to: 'trips#search'
+  resources :reviews, only: %i[index destroy]
   resources :bookings, only: [:index]
-  resources :bookmarks, only: [:index, :destroy]
+  resources :bookmarks, only: %i[index destroy]
   resources :users, only: [:show]
   resources :trips do
-    resources :reviews, only: %i[create destroy]
+    resources :reviews, only: %i[create]
     resources :bookmarks, only: %i[create]
     resources :bookings, only: %i[create destroy] do
       member do
