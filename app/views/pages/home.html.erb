@@ -34,29 +34,6 @@
                     <div class="infos">
                       <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>
                       <p class="mb-1 mt-2"> Tribe members:</p>
-                  <% trip.bookings.each do |booking| %>
-                    <% if booking.user.photo.attached? %>
-                      <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :fill, class: "profile-icon" %>
-                    <% else %>
-                      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
-                    <% end %>
-                  <% end %>
-                <!--<img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
-                <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">-->
-              </div>
-
-              <div class="p-3 flex-fill bd-highlight">
-                <div class="d-flex p-1 pt-2 mb-4 ms-4 bd-highlight">
-                  <div class="d-flex bd-highlight">
-                    <p class="me-1"><%= trip.average_rating %></p>
-                    <i class="pb-1 fas fa-heart"></i>
-                  </div>
-                  <p class="ms-3"><%= trip.reviews.length %> reviews</p>
-                </div>
-                  <div class= "mt-4 mb-2">
-                    <div class="row mb-1">
-                      <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
-                      <button type="button" class="btn btn-small btn-dark">Dark</button>
                     </div>
                       <% if trip.user.photo.attached? %>
                         <%= cl_image_tag trip.user.photo.key, crop: :fill, class: "profile-icon" %>
@@ -73,6 +50,26 @@
                     <!--<img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">
                     <img class="profile-icon" src="https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs1.jpeg" alt="Avatar">-->
                   </div>
+                  <div class="p-3 flex-fill bd-highlight">
+                    <div class="d-flex p-1 pt-2 mb-4 ms-4 bd-highlight">
+                      <div class="d-flex bd-highlight">
+                        <p class="me-1"><%= trip.average_rating %></p>
+                        <i class="pb-1 fas fa-heart"></i>
+                      </div>
+                      <p class="ms-3"><%= trip.reviews.length %> reviews</p>
+                    </div>
+                      <div class= "mt-4 mb-2">
+                        <div class="row mb-1">
+                          <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
+                          <button type="button" class="btn btn-small btn-dark">Dark</button>
+                        </div>
+                        <div class="row mb-1">
+                          <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
+                          <button type="button" class="btn btn-small btn-dark">Dark</button>
+                        </div>
+                        <div class="row">
+                          <button type="button" class="me-0 btn btn-small btn-dark">Dark</button>
+                          <button type="button" class="btn btn-small btn-dark">Dark</button>
                         </div>
                       </div>
                     <div class="price">
@@ -88,14 +85,12 @@
         </div>
     </div>
         <!-- === MAP STARTS HERE === -->
-
-      <div 
+      <div
         class="map"
         style="width: 100%; height: 600px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
       <div class="push"></div>
   </div>
