@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   require 'date'
 
+  def new
+    @review = Review.new
+    authorize @review
+  end
+
   def create
     @review = Review.new(review_params)
     @trip = Trip.find(params[:trip_id])

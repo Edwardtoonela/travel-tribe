@@ -202,7 +202,7 @@
       <!-- Left side with header, leave review and sum of reviews -->
       <div class="col reviews">
         <div class="mb-4 leave review">
-          <button type="button" class="btn btn-dark">Write a Review</button>
+          <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-dark review-button" %>
         </div>
         <div class="mt-4 mb-4 all-reviews">
           <h4>Average rating: 4.5</h4>
