@@ -1,8 +1,8 @@
   <div class="container mb-3">
-    <h3>Pending Requests</h3>
+    <h3 class="pending-request-title">Pending Requests</h3>
     <% current_user.trips.each do |trip| %>
       <% trip.bookings.select { |booking| booking.status == "pending" }.each do |booking| %>
-        <div class="card">
+        <div class="card-pending">
           <div class="card-body">
             <h4>Request to join "<%= trip.name %>" by:</h4>
             <%= booking.user.full_name %>
@@ -19,7 +19,7 @@
 
 
   <div class="container">
-    <h3>Bookings</h3>
+    <h3 class="user-booking">Bookings</h3>
 
     <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
     <% current_user.bookings.each do |booking| %>

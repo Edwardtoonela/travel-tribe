@@ -1,0 +1,16 @@
+.card-pending {
+  overflow: hidden;
+  width: 50%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 2px 2px #bbb6b6;
+  border: 1px solid #bbb6b6;
+}
+
+#trip-status-update {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
