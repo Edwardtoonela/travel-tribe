@@ -30,7 +30,7 @@
             <h2 class="card-title"><%= booking.trip.name %></h2>
             <h6 class="card-text">Location: <%= booking.trip.address %></h6>
             <h6 class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></h6>
-            <p class="card-text <%= booking_status(booking) %>"><%= booking.status %></p>
+            <p class="card-text text-end <%= booking_status(booking) %>"><%= booking.status %></p>
           </div>
         </div>
       </div>

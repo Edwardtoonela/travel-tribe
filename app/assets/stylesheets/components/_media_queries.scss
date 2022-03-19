@@ -136,28 +136,24 @@
     flex-direction: column;
   }
 
-  .card {
-    overflow: hidden;
-    height: 800px;
-    width: 100%;
-    background: white;
-    border-radius: 15px;
-    border: 1px solid #000000;
+  .card-product {
+    height: 310px;
+    width: 702px;
+    margin: 25px;
   }
 
-  .card img {
-    height: 300px;
+  .card-product img {
+    height: 310px;
     -o-object-fit: cover;
     object-fit: cover;
-    width: 100%;
   }
 
-  .card ul {
+  .card-product ul {
     display: flex;
     justify-content: center;
   }
 
-  .card li {
+  .card-product li {
     margin-right: 25px;
   }
 
