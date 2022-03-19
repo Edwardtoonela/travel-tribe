@@ -30,6 +30,55 @@
   .searchTerm {
     margin-right: 20px;
   }
+
+  // == CARD PRODUCT == //
+
+  .home-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+ 
+  .card-product {
+    height: 780px;
+    width: 390px;
+    margin: 15px;
+  }
+
+  .mobile-card-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-product img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+
+  .description {
+    text-align: center;
+  }
+
+  .trip-title {
+    text-align: center;
+  }
+
+  .ratings {
+    justify-content: center;
+  }
+
+  .trip-tags {
+    display: flex;
+    justify-content: center;
+  }
+
+  .price{
+    font-size: 35px;
+  }
 }
 
 // MOBILE SIZE
@@ -59,33 +108,44 @@
 
   // == CARD PRODUCT == //
 
-  .card-div {
-    flex-direction: column;
-  }
-
-  .card {
-    overflow: hidden;
-    height: 800px;
-    width: 100%;
-    background: white;
-    border-radius: 15px;
-    border: 1px solid #000000;
-  }
-
-  .card img {
-    height: 300px;
-    -o-object-fit: cover;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .card ul {
+  .home-layout {
     display: flex;
+    flex-direction: row;
     justify-content: center;
   }
 
-  .card li {
+ 
+  .card-product {
+    height: 346px;
+    width: 702px;
+    margin: 25px;
+  }
+
+  .card-product img {
+    height: 346px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .card-product ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card-product li {
     margin-right: 25px;
+    font-size: 13px;
+  }
+
+  .card-product p {
+    flex-direction: column;
+    width: 170px;
+    margin-right: 0;
+  }
+
+  .average-rating {
+    width: 30px;
   }
 
   .description {
@@ -101,10 +161,8 @@
   }
 
   .trip-tags {
-    justify-content: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 
   .price{
@@ -132,18 +190,21 @@
 
   // == CARD PRODUCT == //
 
-  .card-div {
-    flex-direction: column;
+  .home-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
+
   .card-product {
-    height: 310px;
+    height: 346px;
     width: 702px;
     margin: 25px;
   }
 
   .card-product img {
-    height: 310px;
+    height: 346px;
     -o-object-fit: cover;
     object-fit: cover;
   }
@@ -151,10 +212,22 @@
   .card-product ul {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
   .card-product li {
     margin-right: 25px;
+    font-size: 13px;
+  }
+
+  .card-product p {
+    flex-direction: column;
+    width: 170px;
+    margin-right: 0;
+  }
+
+  .average-rating {
+    width: 30px;
   }
 
   .description {
@@ -194,32 +267,29 @@
 
   // == CARD PRODUCT == //
 
-  .card-div {
-    flex-direction: column;
-  }
 
-  .card {
+  .card-product {
     overflow: hidden;
-    height: 800px;
+    height: 355px;
     width: 945px;
     background: white;
     border-radius: 15px;
     border: 1px solid #000000;
   }
 
-  .card img {
-    height: 300px;
+  .card-product img {
+    height: 355px;
     -o-object-fit: cover;
     object-fit: cover;
     width: 100%;
   }
 
-  .card ul {
+  .card-product ul {
     display: flex;
     justify-content: center;
   }
 
-  .card li {
+  .card-product li {
     margin-right: 25px;
   }
 
@@ -264,3 +334,15 @@
   }
 
 } 
+
+// === MAP === //
+@media only screen and (max-width: 1390px) {
+  .map {
+    display: none;
+  }
+}
+
+// TAGS
+.tags {
+  display: none;
+}
