@@ -24,15 +24,18 @@ class BookingsController < ApplicationController
       flash[:alert] = "Oops!! Something went wrong"
       redirect_to trip_path(@trip)
     end
-    
+
   end
 
   def destroy
-    authorize current_user
-    @booking = Booking.find(booking)
+    @booking = Booking.find(params[:id])
+
+    authorize @booking
+
     @booking.destroy
-    redirect_to users,
-    flash[:notice] = "Your booking was successfully canceled."
+
+    redirect_to bookings_path,
+    flash: { notice: "Your booking was successfully canceled." }
   end
 
   def accept

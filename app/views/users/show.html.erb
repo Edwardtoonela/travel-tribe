@@ -78,11 +78,11 @@
 <!-- Userprofile 2nd part -->
 <div class="container">
 <!-- User Bookings -->
-<div>
-  <div>
+  <div class="category-header">
     <h3>Bookings</h3>
+    <%= link_to "See all", bookings_path(@user) %>
   </div>
-  <div class="container mt-1 pt-0">
+  <div class="container mt-1 pt-0 mb-3 pb-3 ">
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @user.bookings.first(3).each do |booking| %>
       <div class="col">
@@ -102,44 +102,32 @@
       </div>
     <% end %>
     </div>
-      <div class="mb-2 mt-2 text-end"><%= link_to "See all", bookings_path(@user) %></div>
   </div>
-</div>
 <!-- User Bookmarks -->
-  <div>
+  <div class="mb-3 category-header">
     <h3>Favorites</h3>
+    <%= link_to "See all", bookmarks_path(@user) %>
   </div>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mb-3">
+  <div class="container mt-1 pt-0 mb-3 pb-3 ">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @user.bookmarks.first(3).each do |bookmark| %>
       <div class="col">
-        <div class="card-favorites h-100">
-          <img src="..." class="card-img-top" alt="...">
+        <div class="card h-100">
+          <% if bookmark.trip.photo.attached? %>
+            <%= cl_image_tag bookmark.trip.photo.key, class: "card-img-top"%>
+          <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <% end %>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">Trip name: <%= bookmark.trip.name %></h5>
+            <p class="card-text">Location: <%= bookmark.trip.address %></p>
+            <p class="card-text"> Date: <%= bookmark.trip.start_date %> - <%= bookmark.trip.end_date %></p>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card-favorites h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card-favorites h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-        </div>
-      </div>
+    <% end %>
     </div>
   </div>
-</div>
+  </div>
   <div class="push"></div>
 </main>

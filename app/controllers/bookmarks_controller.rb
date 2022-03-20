@@ -30,6 +30,5 @@ class BookmarksController < ApplicationController
     @bookmark.destroy
 
     redirect_to trip_path(@trip)
-
   end
 end
