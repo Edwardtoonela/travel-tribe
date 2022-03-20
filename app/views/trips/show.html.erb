@@ -10,7 +10,7 @@
           <!-- PROFILE -->
             <div class="profile-img">
               <% if @trip.user.photo.attached? %>
-                <%= cl_image_tag @trip.user.photo.key %>
+                <%= cl_image_tag @trip.user.photo.key, width: 170, height: 170, crop: :fill %>
               <% else %>
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
               <% end %>
@@ -30,9 +30,9 @@
               <% unless @trip.user == current_user %>
                 <% if @user_bookmark.nil? %>
                   <%= simple_form_for [@trip, @bookmark] do |f| %>
-                  <div class ="icon">
-                    <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "bookmark") %>
-                  </div>
+                    <div class ="icon">
+                      <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "bookmark") %>
+                    </div>
                   <% end %>
                 <% else %>
                   <%= link_to bookmark_path(@user_bookmark), method:"delete", class:"icon" do%>
@@ -66,7 +66,7 @@
           <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
           <h4>Start date: <%= @trip.start_date  %></h4>
           <h4>End date: <%= @trip.end_date  %></h4>
-          <h4 class="text-center">Location: <%= @trip.location  %></h4>
+          <h4 class="text-center">Location: <%= @trip.address  %></h4>
           <h2 class="trip-txt-style text-center">Something about the trip</h2>
           <h4 class="trip-description"><%= @trip.description  %></h4>
         </div>
