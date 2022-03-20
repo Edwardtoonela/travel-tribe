@@ -205,8 +205,9 @@
           <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-dark review-button" %>
         </div>
         <div class="mt-4 mb-4 all-reviews">
-          <h4>Average rating: 4.5</h4>
-          <p>5 Star reviews</p>
+          <h4> Average rating: <%= @trip.average_rating %></h4>
+          <h6 class ="pb-3 pt-1">Total <%= @trip.ratings_count %> reviews</h6>
+          <p>5 Star reviews:</p>
           <p>4 Star reviews</p>
           <p>3 Star reviews</p>
           <p>2 Star reviews</p>
@@ -218,7 +219,6 @@
         <div class="container pt-2">
           <div class="row align-items-start" style="display: contents;">
             <div class="col">
-              <h4>All reviews</h4>
               <%= render @trip.reviews %>
             </div>
           </div>
