@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="mb-4">
+    <h1>Leave a Review!</h1>
+  </div>
+<%= simple_form_for([@trip, @trip.reviews.build]) do |f| %>
+  <%= f.input :rating, collection: 1..5, input_html: { class: 'review-box-small' }%>
+  <%= f.input :title, input_html: { class: 'review-box-small' }, required: true %>
+  <div class="mb-4">
+    <label for="exampleFormControlInput1" class="form-label d-flex flex-column">Write your review down here:</label>
+    <%= f.text_area :comment, class:"review-box", required: true, minlength: 5 %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+  <div class="push"></div>
+</div>

@@ -23,6 +23,13 @@ class Trip < ApplicationRecord
     (ratings.sum.to_f / ratings.length).round(2)
   end
 
+  def ratings_count
+    ratings= reviews.map do |review|
+      review.rating
+    end
+    (ratings.length)
+  end
+
   algoliasearch do
     attributes :name, :description, :address
     searchableAttributes ['name', 'description']

@@ -196,6 +196,32 @@
             <!-- Carousel wrapper -->
           </div>
         </div>
+  <!-- Reviews section -->
+  <div class="container pt-5 wrapper_reviews">
+    <div class="row align-items-start">
+      <!-- Left side with header, leave review and sum of reviews -->
+      <div class="col reviews">
+        <div class="mt-4 mb-4 all-reviews">
+          <h4> Average rating: <%= @trip.average_rating %></h4>
+          <h6 class ="pb-3 pt-1">Total <%= @trip.ratings_count %> reviews</h6>
+        </div>
+        <div class="mb-4 leave review">
+          <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-dark review-button" %>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="container pt-2">
+          <div class="row align-items-start" style="display: contents;">
+            <div class="col">
+              <%= render @trip.reviews %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="push"></div>
 </main>
