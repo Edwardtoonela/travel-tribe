@@ -38,16 +38,19 @@
   color: orange;
   font-style: italic;
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 .confirmed {
   color: green;
   font-style: italic;
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 .rejected {
   color: red;
   font-style: italic;
   font-weight: 300;
+  text-transform: capitalize;
 }
