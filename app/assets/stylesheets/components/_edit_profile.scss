@@ -1,3 +1,7 @@
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
 .user-info-name{
   padding: 10px;
   text-align: center;
@@ -40,3 +44,21 @@
     transform: scale(1.1);
   }
 }
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+// .edit-password {
+//   text-decoration: none !important;
+// }
