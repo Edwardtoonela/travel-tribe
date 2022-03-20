@@ -9,4 +9,8 @@ class ReviewPolicy < ApplicationPolicy
     user
   end
 
+  def create?
+    user
+  end
+
 end

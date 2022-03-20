@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
   require 'date'
+  before_action :find_trip
 
   def new
     @review = Review.new
     authorize @review
+
   end
 
   def create
     @review = Review.new(review_params)
-    @trip = Trip.find(params[:trip_id])
     @review.trip = @trip
     @review.user = current_user
     authorize @review
+
     if @review.save
       redirect_to trip_path(@trip)
       flash[:notice] = "Your review is done"
@@ -32,6 +34,11 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(%i[comment rating])
+    params.require(:review).permit(%i[comment rating title])
   end
+
+  def find_trip
+    @trip = Trip.find(params[:trip_id])
+  end
+
 end
