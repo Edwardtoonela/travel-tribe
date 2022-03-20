@@ -29,10 +29,9 @@
                     <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
                     <ul>
                       <li class="mb-2 mt-1 me-0">
-                        <p><%= trip.start_date %></p>
-                        <p><%= trip.end_date %></p>
+                        <h4><%= trip.start_date.strftime("%d.%m") %> - <%= trip.end_date.strftime("%d.%m.%Y") %> </h4>
+                        <h4><%= trip.max_guests %> people </>
                       </li>
-                      <li><h4 class="mb-2 mt-1"> <%= trip.max_guests %> people</h4></li>
                     </ul>
                     <div class="infos">
                       <p class="mb-3 mt-4 pe-3"><%= trip.description %></p>

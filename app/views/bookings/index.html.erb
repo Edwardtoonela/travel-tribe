@@ -24,6 +24,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
     <% current_user.bookings.each do |booking| %>
       <div class="col">
+        <div class="edits">
+          <p class="ms-2"><%= link_to "Delete", trip_booking_path(booking.trip, booking), method: :delete, data: { confirm: "Are you sure?"} %>
+          </p>
+        </div>
         <div class="booking-card h-100">
           <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
           <div class="card-body">
@@ -37,6 +41,8 @@
     <% end %>
     </div>
   </div>
-
     <div class="push"></div>
-    
+  <div class="form-actions">
+    <%= link_to "Back", :back %>
+  </div>
+    <div class="push"></div>

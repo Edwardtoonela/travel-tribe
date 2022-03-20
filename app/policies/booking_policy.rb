@@ -10,6 +10,10 @@ class BookingPolicy < ApplicationPolicy
     user
   end
 
+  def destroy?
+    user
+  end
+
   def index?
     user
   end

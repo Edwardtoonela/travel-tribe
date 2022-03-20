@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     if @review.update(review_params)
-      redirect_to root_path
+      redirect_to reviews_path flash: { notice: "Your review was successfully edited." }
     else
       render 'edit'
     end
@@ -50,8 +50,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     @review.destroy
-    redirect_to review_user_path
-    flash[:notice] = "Your review was successfully deleted."
+    redirect_to reviews_path flash: { notice: "Your review was successfully deleted." }
   end
 
   private
