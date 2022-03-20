@@ -41,4 +41,7 @@ class ReviewsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
   end
 
+  def find_user
+    @user = User.find(params[:user_id])
+  end
 end

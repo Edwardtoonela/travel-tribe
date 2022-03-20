@@ -1,0 +1,25 @@
+
+<div class="container">
+  <!-- partial page for viewing reviews on trips -->
+  <!-- User section -->
+  <div class="row mb-1 review-head">
+    <div class="col">
+      <% if review.user.photo.attached? %>
+        <%= cl_image_tag review.user.photo.key, crop: :fill, class: "profile-icon" %>
+      <% else %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+      <% end %>
+        <div class="col d-flex mt-2">
+          <p><%= review.user.full_name %>'s review: </p>
+          <p class = "ps-2"><%= review.rating%></p>
+          <i class=" ms-2 fas fa-heart"></i>
+        </div>
+    </div>
+  </div>
+  <!-- Review section -->
+  <div class="review-body">
+    <p class="pb-1"><strong> <%= review.title %></strong> </p>
+    <p> <%= review.comment %> </p>
+    <p style="color: #b2b0b0;">Written on <%= review.created_at.strftime("%d.%m.%Y") %></p>
+  </div>
+</div>
