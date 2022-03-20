@@ -13,4 +13,8 @@ class ReviewPolicy < ApplicationPolicy
     user
   end
 
+  def index?
+    user
+  end
+
 end

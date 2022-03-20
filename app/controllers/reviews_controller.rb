@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
   require 'date'
-  before_action :find_trip
+  before_action :find_trip, only: %i[new create]
 
   def new
     @review = Review.new
     authorize @review
+  end
 
+  def index
+    @reviews = policy_scope(Bookmark)
+    authorize @reviews
   end
 
   def create
