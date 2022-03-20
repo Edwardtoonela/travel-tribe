@@ -24,3 +24,8 @@
     color: $white;
   }
 }
+
+.edits {
+  display: flex;
+  flex-direction: row-reverse;
+}

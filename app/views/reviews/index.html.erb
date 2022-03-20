@@ -1,20 +1,27 @@
-  <div class="container">
-    <h3>All reviews written by you</h3>
+  <div class="container mb-4">
+    <h3 class="pb-3">All reviews written by you</h3>
 
     <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
     <% current_user.reviews.each do |review| %>
       <div class="col">
+          <div class="edits">
+            <p class="ms-2"><%= link_to "Delete", trip_review_path(review.trip, review), method: :delete, data: { confirm: "Are you sure?"} %>
+            </p>
+            <p class="ms-2"><%= link_to "Edit", edit_trip_review_path(review.trip, review) %></p>
+          </div>
       <%= link_to trip_path(review.trip), class: "link_to_class" do %>
         <div class="card h-100">
         <!-- Dropdown menu -->
-         <div class="dropsend align-self-end mt-3 me-3">
-          <i class="fas fa-caret-circle-down dropdown-toggle"data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <!-- <i class="fas fa-caret-circle-down dropdown-toggle"data-bs-toggle="dropdown" aria-expanded="false"></i>
 
           <ul class="dropdown-menu">
-            <p class="ms-2">Edit</p>
-            <p class="ms-2">Delete</p>
+
+            <p class="ms-2"><%= link_to "Edit", edit_trip_review_path(review.trip, review) %></p>
+            <p class="ms-2"><%= link_to "Delete", trip_review_path(review.trip, review), method: :delete, data: {
+            confirm: "Are you sure?"} %>
+            </p>
           </ul>
-        </div>
+        </div> -->
 
           <div class="card-body">
             <h5 class="card-title">Your trip: <strong><%= review.trip.name %></strong> </h5>
@@ -28,5 +35,6 @@
     <% end %>
     </div>
   </div>
-
-    <div class="push"></div>
+<div class="push"></div>
+<div class="push"></div>
+<div class="push"></div>

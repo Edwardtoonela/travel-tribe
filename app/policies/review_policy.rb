@@ -17,4 +17,16 @@ class ReviewPolicy < ApplicationPolicy
     user
   end
 
+  def edit?
+    user
+  end
+
+  def update?
+    user
+  end
+
+  def destroy?
+    user
+  end
+
 end

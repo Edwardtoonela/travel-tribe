@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :bookmarks, only: %i[index destroy]
   resources :users, only: [:show]
   resources :trips do
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[new create edit update]
     resources :bookmarks, only: %i[create]
     resources :bookings, only: %i[create destroy] do
       member do
