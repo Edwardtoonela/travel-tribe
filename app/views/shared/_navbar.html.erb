@@ -40,7 +40,6 @@
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Messages", "trips/id/chatrooms/id", class: "dropdown-item" %>
               <%= link_to "Bookings", bookings_path(current_user), class: "dropdown-item" %>
               <%= link_to "Favorites", bookmarks_path(current_user), class: "dropdown-item" %>
               <%= link_to "Create trip", "/trips/new", class: "dropdown-item" %>

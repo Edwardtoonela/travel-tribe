@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   require 'date'
-  before_action :find_trip, only: %i[new create]
+  before_action :find_trip, only: %i[new create edit update]
   before_action :find_review, only: %i[edit update destroy]
 
   def new
@@ -38,16 +38,19 @@ class ReviewsController < ApplicationController
     authorize @review
 
     if @review.update(review_params)
-      redirect_to trip_path(@trip)
+      redirect_to root_path
     else
       render 'edit'
     end
   end
 
   def destroy
-    authorize current_user
+    @review = Review.find(params[:id])
+
+    authorize @review
+
     @review.destroy
-    redirect_to trip_path(@trip),
+    redirect_to review_user_path
     flash[:notice] = "Your review was successfully deleted."
   end
 
