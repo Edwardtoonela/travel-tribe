@@ -1,9 +1,3 @@
-// === MEDIA QUERY === //
-@media only screen and (max-width: 1390px) {
-  .map {
-    display: none;
-  }
-}
 
 .mapboxgl-popup {
   max-width: 150px;
@@ -98,6 +92,6 @@
   color: white;
 }
 
-.mapboxgl-ctrl-geocoder--suggestion-address {
-  // color: rgb(47, 132, 189);
-}
+// .mapboxgl-ctrl-geocoder--suggestion-address {
+//   // color: rgb(47, 132, 189);
+// }
