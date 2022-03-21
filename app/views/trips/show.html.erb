@@ -41,7 +41,7 @@
                 <% end %>
               <% end %>
 
-              <% if check_status || @trip.user == current_user%>
+              <% if check_status(@trip) || @trip.user == current_user%>
                 <%= link_to chatroom_path(@chat), class: "icon" do %>
                   <%= fa_icon('paper-plane') %>
                 <% end %>
@@ -79,7 +79,7 @@
                 <% else %>
                   <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
-                <% unless check_status == false%>
+                <% unless check_status(@trip) == false%>
                   <% @trip.bookings.each do |booking| %>
                   <%= link_to user_path(booking.user), class: "link_to_class" do %>
                     <% if booking.user.photo.attached? %>
