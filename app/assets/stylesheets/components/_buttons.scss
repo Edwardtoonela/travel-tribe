@@ -32,4 +32,29 @@
 .edits {
   display: flex;
   flex-direction: row-reverse;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+
+  a {
+    text-decoration: none;
+    background-color: #B2B2B2;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    color: white;
+
+    &:hover {
+      background-color: red;
+      color: $white;
+    }
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.edit-card {
+  position: relative;
 }
