@@ -16,22 +16,22 @@
 }
 
 .modal-body button {
-  background-color: white;
-  border-color: black;
-  border-radius: 10px;
+  background-color: $background;
+  border: none;
+  border-radius: 7px;
   margin-top: 3vw;
-  width: 25vw;
+  width: 10vw;
 }
 
 .modal-body button:hover {
-  background-color: black;
+  background-color: $close-btn;
   color: white;
 }
 
 .modal-body .form-control {
   background-color: white;
   border-color: grey;
-  border-radius: 10px;
+  border-radius: 7px;
   width: 40vw;
   font-size: 25px;
 }
@@ -43,7 +43,7 @@
 .modal-body .mapboxgl-ctrl-geocoder--input {
   background-color: white;
   border-color: grey;
-  border-radius: 10px;
+  border-radius: 7px;
   width: 40vw;
   font-size: 25px;
 }
@@ -51,17 +51,17 @@
 .modal-body .form-select {
   background-color: white;
   border-color: grey;
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 25px;
 }
 
 .modal-body .submit_button {
-  background-color: white;
-  border-color: black;
-  border-radius: 10px;
+  background-color: $background;
+  border: none;
+  border-radius: 7px;
 }
 
 .modal-body .submit_button:hover {
-  background-color: black;
+  background-color: $close-btn;
   color: white;
 }
