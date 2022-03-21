@@ -10,7 +10,7 @@
 
 
 .user-info-about {
-  background-color: #95BBBF;;
+  background-color: $background;
   color: white;
   padding: 25px;
   border-radius: 7px;
@@ -21,8 +21,10 @@
 .user-booking,
 .user-Favorites,
 .pending-request-title {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: $background;
   color: white;
+  padding: 5px;
+
 }
 
 .card-favorites {

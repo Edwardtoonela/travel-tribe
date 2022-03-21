@@ -1,5 +1,5 @@
   <div class="container mb-3">
-    <h3 class="pending-request-title">Pending Requests</h3>
+    <h3 class="pending-request-title mb-5">Pending Requests</h3>
     <% current_user.trips.each do |trip| %>
       <% trip.bookings.select { |booking| booking.status == "pending" }.each do |booking| %>
         <div class="card-pending">
@@ -23,7 +23,7 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
     <% current_user.bookings.each do |booking| %>
-      <div class="col edit-card">
+      <div class="col edit-card mt-5">
         <div class="edits">
           <p class="ms-2"><%= link_to "x", trip_booking_path(booking.trip, booking), method: :delete, data: { confirm: "Are you sure?"} %>
           </p>

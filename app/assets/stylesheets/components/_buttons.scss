@@ -38,14 +38,14 @@
 
   a {
     text-decoration: none;
-    background-color: #B2B2B2;
+    background-color: $background;
     padding: 4px 10px;
     border-radius: 6px;
     border: 1px solid;
     color: white;
 
     &:hover {
-      background-color: red;
+      background-color: $close-btn;
       color: $white;
     }
   }
