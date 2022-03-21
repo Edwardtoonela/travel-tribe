@@ -6,7 +6,7 @@
       <% if review.user.photo.attached? %>
         <%= cl_image_tag review.user.photo.key, crop: :fill, class: "profile-icon" %>
       <% else %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+        <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
       <% end %>
         <div class="col d-flex mt-2">
           <p><%= review.user.full_name %>'s review: </p>

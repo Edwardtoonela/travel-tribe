@@ -12,7 +12,7 @@
               <% if @trip.user.photo.attached? %>
                 <%= cl_image_tag @trip.user.photo.key, width: 170, height: 170, crop: :fill %>
               <% else %>
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
+                <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg" %>
               <% end %>
                 <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
             </div>
@@ -75,14 +75,14 @@
                 <% if @trip.user.photo.attached? %>
                   <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
                 <% else %>
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                  <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
                 <% @trip.bookings.each do |booking| %>
                  <%= link_to user_path(booking.user), class: "link_to_class" do %>
                   <% if booking.user.photo.attached? %>
                     <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
                   <% else %>
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-icon" %>
+                    <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                   <% end %>
                 <% end %>
               <% end  %>
