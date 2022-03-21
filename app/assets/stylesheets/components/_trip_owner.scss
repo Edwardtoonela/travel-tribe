@@ -105,7 +105,7 @@ a {
 }
 
 .trip-txt-style {
-  background-color: black;
+  background-color: $background;
   color: white;
   text-transform: capitalize;
   border-radius: 8px;
@@ -114,4 +114,16 @@ a {
 .text-description {
   text-align: justify;
   text-justify: inter-word;
+}
+
+.trip-Location {
+  justify-content: center;
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.people-price {
+  justify-content: space-around;
 }

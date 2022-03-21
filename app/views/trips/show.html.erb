@@ -12,7 +12,7 @@
               <% if @trip.user.photo.attached? %>
                 <%= cl_image_tag @trip.user.photo.key, width: 170, height: 170, crop: :fill %>
               <% else %>
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
+                <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg" %>
               <% end %>
                 <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
             </div>
@@ -51,8 +51,48 @@
           </div>
       </div>
     </div>
-    <div class="container mb-4">
+    <div class="container mx-auto mb-4">
       <div class="row">
+
+      <!-- TRIP INFO -->
+       <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
+          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
+          <div class="info-card p-3">
+            <div class="trip-Location d-flex p-2">
+              <p class="trip-date me-2"><%= @trip.start_date.strftime("%d") %> - <%= @trip.end_date.strftime("%d.%B/%Y") %></p>
+              <p>|</p>
+              <p class="text-center ms-2"><%= @trip.address  %></p>
+            </div>
+
+            <div class="people-price d-flex p-2">
+            <h3><%= @trip.max_guests %> people </h3>
+
+            
+            <h3>$<%= average_price %> per person</h3>
+            </div>
+            <div class="profile-photos">
+              
+                <% if @trip.user.photo.attached? %>
+                  <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                <% else %>
+                  <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                <% end %>
+                <% @trip.bookings.each do |booking| %>
+                 <%= link_to user_path(booking.user), class: "link_to_class" do %>
+                  <% if booking.user.photo.attached? %>
+                    <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                  <% else %>
+                    <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                  <% end %>
+                <% end %>
+              <% end  %>
+            </div>
+          </div>
+          <h2 class="trip-txt-style text-center">Something about the trip</h2>
+          <h4 class="trip-description"><%= @trip.description %></h4>
+        </div>
+
+        <!-- TRIP IMAGE -->
         <div class="col-sm-6 col-md-5 col-lg-6 ms-4">
           <% if @trip.photo.attached? %>
                 <%= cl_image_tag @trip.photo.key, id: "trip-pic" %>
@@ -62,14 +102,6 @@
           <!--<img id="trip-pic" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs2.jpeg'>-->
         </div>
 
-        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
-          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
-          <h4>Start date: <%= @trip.start_date  %></h4>
-          <h4>End date: <%= @trip.end_date  %></h4>
-          <h4 class="text-center">Location: <%= @trip.address  %></h4>
-          <h2 class="trip-txt-style text-center">Something about the trip</h2>
-          <h4 class="trip-description"><%= @trip.description  %></h4>
-        </div>
       </div>
     </div>
     <div>
