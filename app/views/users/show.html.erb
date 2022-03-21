@@ -47,14 +47,8 @@
             <div class="row align-items-start" style="display: contents;">
               <div class="col user-info-name">
                 <h1>Hi, I am <%= @user.full_name %> !</h1>
-                </div>
                 <div class="d-flex user-info-edit">
                   <p>Joined <%= @user.created_at.year %></p>
-                  <% if @user == current_user %>
-                    <div>
-                      <p>Edit</p>
-                    </div>
-                <% end %>
               </div>
               <div class="col pt-5 user-info-about">
                 <h3>About me:</h3>
