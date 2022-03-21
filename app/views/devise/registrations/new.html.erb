@@ -1,15 +1,15 @@
-<div class="container sign-box">
-  <div class="row">
+<div class="container sign-box mb-5">
+  <div class="row justify-center">
 
     <!-- HERE IS THE IMAGE -->
-    <div class="col-6">
+    <div class="col-6 signin-up-img mx-auto">
       <div class="container signup-img p-0">
              <%= image_tag asset_path('https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs3.jpeg'), class:"sign-img" %>
       </div>
     </div>
 
     <!-- HERES THE SIGNUP-->
-    <div class="container col-6 d-flex flex-column justify-content-center p-0">
+    <div class="container col-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center p-0">
       <h2 class="sing_title">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
