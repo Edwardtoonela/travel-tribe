@@ -26,19 +26,19 @@
             <div id="userprofile-body" class="ps-3">
               <div class="d-flex flex-column">
                 <h3>Lives in:</h3>
-                <% if @user.languages == nil %>
+                <% if @user.home == "" %>
                   <p class= "extra-placeholders">😴 Nothing here yet...</p>
                 <% else %>
-                  <p><%= @user.home %></p>
+                  <p class ="after-placeholders"><%= @user.home %></p>
                 <% end %>
               </div>
 
               <div class="d-flex flex-column">
                 <h3>Speaks:</h3>
-                <% if @user.languages == nil %>
+                <% if @user.languages == "" %>
                   <p class= "extra-placeholders">🧐 There has to be atleast one language, right?</p>
                 <% else %>
-                  <p><%= @user.languages %></p>
+                  <p class ="after-placeholders"><%= @user.languages %></p>
                 <% end %>
               </div>
 
@@ -60,19 +60,19 @@
               </div>
               <div class="col pt-5 user-info-about">
                 <h3>About me:</h3>
-                <% if @user.languages == nil %>
+                <% if @user.bio == "" %>
                   <p class= "pt-4 extra-placeholders" style= "color: white;">😴 Nothing here yet...</p>
                 <% else %>
-                  <p><%= @user.bio %></p>
+                  <p class ="after-placeholders"><%= @user.bio %></p>
                 <% end %>
 
               </div>
               <div class="col pt-5 mt-5 user-info-about">
               <h3>What kind of traveler I am:</h3>
-                <% if @user.languages == nil %>
+                <% if @user.traveltype == "" %>
                   <p class= " pt-4 extra-placeholders" style= "color: white;">😴 Nothing here yet...</p>
                 <% else %>
-                  <p><%= @user.traveltype %></p>
+                  <p class ="after-placeholders"><%= @user.traveltype %></p>
                 <% end %>
 
               </div>
