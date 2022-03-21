@@ -3,18 +3,18 @@
   <button type="button" class="btn-default" data-bs-toggle="modal" data-bs-target="#scratchModal">Scratch</button>
   <button type="button" class="btn-default" data-bs-toggle="modal" data-bs-target="#scratchModal">Template</button>-->
   <%= simple_form_for @trip do |f| %>
-    <%= f.input :name, label: "Title of your trip", wrapper_html: { class: 'show_input', data: {slide_form_target: 'input' } } %>
-    <%= f.input :address, label: "Destination",
+    <%= f.input :name, required: true, label: "Title of your trip", wrapper_html: { class: 'show_input', data: {slide_form_target: 'input' } } %>
+    <%= f.input :address, required: true, label: "Destination",
               input_html: { class:'d-none', data: { geocoder_target: "address" } },
               wrapper_html: { class: 'hide_input', data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'], slide_form_target: 'input' } } %>
 
-    <%= f.input :price_min, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
-    <%= f.input :price_max, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
-    <%= f.input :start_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
-    <%= f.input :end_date, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
-    <%= f.input :description, :maxlength => 100, wrapper_html: { class: 'hide_input description_text', data: { slide_form_target: 'input'} } %>
-    <%= f.input :max_guests, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
-    <%= f.input :photo, as: :file, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :price_min, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :price_max, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :start_date, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :end_date, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :description, required: true, :minlength => 30, wrapper_html: { class: 'hide_input description_text', data: { slide_form_target: 'input'} } %>
+    <%= f.input :max_guests, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
+    <%= f.input :photo, as: :file, required: true, wrapper_html: { class: 'hide_input', data: { slide_form_target: 'input'} } %>
     <%= f.submit class: 'hide_input submit_button', data: { slide_form_target: 'input' } %>
   <% end %>
   <button data-action='click->slide-form#next' data-slide-form-target='next'>Next</button>
