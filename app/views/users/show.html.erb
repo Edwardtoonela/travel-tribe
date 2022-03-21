@@ -7,7 +7,7 @@
 
     <!-- Userprofile left half-->
         <div class="col"style="flex: 0.6 0 0%;">
-          <div class="userprofile-card ms-4">
+          <div class="ms-4">
             <div id="userprofile-picture">
               <div class="mb-4 profile">
                 <% if @user.photo.attached? %>
@@ -25,13 +25,21 @@
             </div>
             <div id="userprofile-body" class="ps-3">
               <div class="d-flex flex-column">
-                <h3 class="edit-profile-items">Lives in:</h3>
-                <p>Rio de Janeiro</p>
+                <h3>Lives in:</h3>
+                <% if @user.languages == nil %>
+                  <p class= "extra-placeholders">😴 Nothing here yet...</p>
+                <% else %>
+                  <p><%= @user.home %></p>
+                <% end %>
               </div>
 
               <div class="d-flex flex-column">
-                <h3 class="edit-profile-items">Speaks:</h3>
-                <p>English, Portuguese, Estonian</p>
+                <h3>Speaks:</h3>
+                <% if @user.languages == nil %>
+                  <p class= "extra-placeholders">🧐 There has to be atleast one language, right?</p>
+                <% else %>
+                  <p><%= @user.languages %></p>
+                <% end %>
               </div>
 
               <% if @user == current_user %>
@@ -52,14 +60,21 @@
               </div>
               <div class="col pt-5 user-info-about">
                 <h3>About me:</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised</p>
+                <% if @user.languages == nil %>
+                  <p class= "pt-4 extra-placeholders" style= "color: white;">😴 Nothing here yet...</p>
+                <% else %>
+                  <p><%= @user.bio %></p>
+                <% end %>
+
               </div>
-              <div class="col pt-5">
+              <div class="col pt-5 mt-5 user-info-about">
               <h3>What kind of traveler I am:</h3>
-               <ul>
-                  <li>The user answers will be displayed here</li>
-                  <li>we still have to decide whether it will be done in ther registration form or not</li>
-                </ul>
+                <% if @user.languages == nil %>
+                  <p class= " pt-4 extra-placeholders" style= "color: white;">😴 Nothing here yet...</p>
+                <% else %>
+                  <p><%= @user.traveltype %></p>
+                <% end %>
+
               </div>
 
             </div>
