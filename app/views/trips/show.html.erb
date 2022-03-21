@@ -41,9 +41,11 @@
                 <% end %>
               <% end %>
 
+              <% if check_status || @trip.user == current_user%>
                 <%= link_to chatroom_path(@chat), class: "icon" do %>
                   <%= fa_icon('paper-plane') %>
-                <% end  %>
+                <% end %>
+              <% end  %>
 
                 <%= link_to trip_path(@trip), target: "_blank", class: "icon" do %>
                   <%= fa_icon('share') %>
@@ -67,22 +69,24 @@
             <div class="people-price d-flex p-2">
             <h3><%= @trip.max_guests %> people </h3>
 
-            
+
             <h3>$<%= average_price %> per person</h3>
             </div>
             <div class="profile-photos">
-              
+
                 <% if @trip.user.photo.attached? %>
                   <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
                 <% else %>
                   <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
-                <% @trip.bookings.each do |booking| %>
-                 <%= link_to user_path(booking.user), class: "link_to_class" do %>
-                  <% if booking.user.photo.attached? %>
-                    <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
-                  <% else %>
-                    <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                <% unless check_status == false%>
+                  <% @trip.bookings.each do |booking| %>
+                  <%= link_to user_path(booking.user), class: "link_to_class" do %>
+                    <% if booking.user.photo.attached? %>
+                      <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                    <% else %>
+                      <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                    <% end %>
                   <% end %>
                 <% end %>
               <% end  %>
