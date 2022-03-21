@@ -51,8 +51,26 @@
           </div>
       </div>
     </div>
-    <div class="container mb-4">
+    <div class="container mx-auto mb-4">
       <div class="row">
+
+      <!-- TRIP INFO -->
+       <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
+          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
+          <div class="trip-Location d-flex">
+            <p class="trip-date me-2"><%= @trip.start_date.strftime("%d") %> - <%= @trip.end_date.strftime("%d.%B/%Y") %></p>
+            <p>|</p>
+            <p class="text-center ms-2"><%= @trip.address  %></p>
+          </div>
+
+          <div class="people-price">
+           <p><%= @trip.max_guests %> people </p>
+          </div>
+          <h2 class="trip-txt-style text-center">Something about the trip</h2>
+          <h4 class="trip-description"><%= @trip.description  %></h4>
+        </div>
+
+        <!-- TRIP IMAGE -->
         <div class="col-sm-6 col-md-5 col-lg-6 ms-4">
           <% if @trip.photo.attached? %>
                 <%= cl_image_tag @trip.photo.key, id: "trip-pic" %>
@@ -62,14 +80,6 @@
           <!--<img id="trip-pic" src='https://raw.githubusercontent.com/Edwardtoonela/travel-tribe/master/app/assets/images/hs2.jpeg'>-->
         </div>
 
-        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
-          <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
-          <h4>Start date: <%= @trip.start_date  %></h4>
-          <h4>End date: <%= @trip.end_date  %></h4>
-          <h4 class="text-center">Location: <%= @trip.address  %></h4>
-          <h2 class="trip-txt-style text-center">Something about the trip</h2>
-          <h4 class="trip-description"><%= @trip.description  %></h4>
-        </div>
       </div>
     </div>
     <div>

@@ -17,14 +17,18 @@ class Trip < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def average_rating
-    ratings= reviews.map do |review|
+    ratings = reviews.map do |review|
       review.rating
     end
-    (ratings.sum.to_f / ratings.length).round(2)
+    if ratings == []
+     "No Ratings"
+    else
+      (ratings.sum.to_f / ratings.length).round(2)
+    end
   end
 
   def ratings_count
-    ratings= reviews.map do |review|
+    ratings = reviews.map do |review|
       review.rating
     end
     (ratings.length)

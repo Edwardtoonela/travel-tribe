@@ -29,8 +29,8 @@
                     <h2 class="pb-2"><strong> <%= trip.name %></strong></h2>
                     <ul>
                       <li class="mb-2 mt-1 me-0">
-                        <h4><%= trip.start_date.strftime("%d.%m") %> - <%= trip.end_date.strftime("%d.%m.%Y") %> </h4>
-                        <h4><%= trip.max_guests %> people </>
+                        <h4><%= trip.start_date.strftime("%d.%B") %> - <%= trip.end_date.strftime("%d.%B%.%Y") %> </h4>
+                        
                       </li>
                     </ul>
                     <div class="infos">
@@ -74,10 +74,6 @@
                           <button type="button" class="btn btn-small btn-dark">Dark</button>
                         </div>
                       </div>
-                    <div class="price">
-                      <p>Price estimate: </p>
-                      <h3> <%= trip.price_min %> - <%= trip.price_max %></h3>
-                    </div>
                   </div>
                 </div>
               </div>
