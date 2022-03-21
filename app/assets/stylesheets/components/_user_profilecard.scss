@@ -45,11 +45,10 @@
 .edit-profile {
   display: flex;
   justify-content: center;
-  text-decoration: underline;
 
-    & :hover {
-      color: dimgray;
-    }
+    // & :hover {
+    //   color: dimgray;
+    // }
 }
 
 .edit-profile-items {

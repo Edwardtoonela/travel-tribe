@@ -17,10 +17,9 @@
                 <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
             </div>
             <h1 class="owner fs-1 text-center">Welcome to <%= @trip.user.user_name %>'s trip!</h1>
-            <p class="description fs-3 text-center"> Surf, Hike, Shopping</p>
           </div>
         </div>
-          <div class="d-flex ms-4 icons">
+          <div class="d-flex mx-auto mt-4 icons">
             <% unless @trip.user == current_user %>
               <%= simple_form_for [@trip, @booking] do |f| %>
                 <%= f.button :submit, "Join The Trip", class: "btn btn-dark join-btn" %>
@@ -166,24 +165,26 @@
 
         <!-- START OF SINGLE BOX -->
         <div class="swiper-slide box">
-          <div class="box-content">
-            <div class="image">
-               <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/44/bb/83/escadaria-central.jpg?w=1200&h=1200&s=1"
-                class="box-img-top"
-                alt="Waterfall"
-                />
+
+            <div class="box-content">
+              <div class="image">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/44/bb/83/escadaria-central.jpg?w=1200&h=1200&s=1"
+                  class="box-img-top"
+                  alt="Waterfall"
+                  />
+              </div>
+
+              <div class="name-profession">
+                <span class="name">Shopping</span>
+                <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.,</span>
+              </div>
+
+              <div class="button">
+                <button class="btn btn-primary">Check It Out</button>
+              </div>
             </div>
 
-            <div class="name-profession">
-              <span class="name">Shopping</span>
-              <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.,</span>
-            </div>
-
-            <div class="button">
-              <button class="btn btn-primary">Check It Out</button>
-            </div>
-          </div>
         </div>
 
         <!-- END OF SINGLE BOX -->
