@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[full_name user_name password photo])
   end
 
+  # for meta
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :home, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :home, unless: :skip_pundit?
