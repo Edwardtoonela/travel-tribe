@@ -1,0 +1,14 @@
+<div class="container mx-auto">
+  <%= simple_form_for(@trip) do |f| %>
+    <%= f.input :name, required: false, label: "Title", placeholder: @trip.name %>
+    <%= f.input :address, required: false, label: "Destination", placeholder: @trip.address %>
+    <%= f.input :price_min, required: false, label: "Minimum price", placeholder: @trip.price_min %>
+    <%= f.input :price_max, required: false, label: "Maximum price", placeholder: @trip.price_max %>
+    <%= f.input :start_date, required: false, label: "Start date", placeholder: @trip.start_date %>
+    <%= f.input :end_date, required: false, label: "End date", placeholder: @trip.end_date %>
+    <%= f.input :description, required: false, label: "Description", placeholder: @trip.description %>
+    <%= f.input :max_guests, required: false, label: "Guests", placeholder: @trip.max_guests %>
+    <%= f.input :photo, as: :file, required: false, label: "Photo", placeholder: @trip.photo %>
+    <%= f.button :submit, "Update" %>
+  <% end %>
+</div>

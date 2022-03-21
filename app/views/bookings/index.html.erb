@@ -23,9 +23,9 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4" style="flex-wrap: wrap;">
     <% current_user.bookings.each do |booking| %>
-      <div class="col">
+      <div class="col edit-card">
         <div class="edits">
-          <p class="ms-2"><%= link_to "Delete", trip_booking_path(booking.trip, booking), method: :delete, data: { confirm: "Are you sure?"} %>
+          <p class="ms-2"><%= link_to "x", trip_booking_path(booking.trip, booking), method: :delete, data: { confirm: "Are you sure?"} %>
           </p>
         </div>
         <div class="booking-card h-100">
