@@ -15,12 +15,13 @@
 
 .review-button {
   width: 204px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $background;
   color: $white;
   padding: 10px;
+  border: none;
 
   &:hover{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $close-btn;
     color: $white;
   }
 }

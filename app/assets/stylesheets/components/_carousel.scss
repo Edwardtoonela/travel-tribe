@@ -118,7 +118,7 @@ section .box .image img{
 }
 
 .box .button button{
-  background: gray;
+  background: $background;
   outline: none;
   border: none;
   color: #fff;
@@ -131,7 +131,7 @@ section .box .image img{
 }
 
 .button button:hover{
-  background: $light-gray;
+  background: $close-btn;
 }
 
 .carousel-wrapper{
@@ -148,7 +148,7 @@ section .box .image img{
   height: 7px;
   width: 26px;
   border-radius: 25px;
-  background: gray;
+  background: $background;
 }
 
 .swiper-button-prev {
@@ -161,14 +161,14 @@ section .box .image img{
 
 .swiper-button-next, .swiper-button-prev{
   opacity: 0.7;
-  color: $light-gray;
+  color: $background;
   transition: all 0.3s ease;
   top: 1330px;
 }
 
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
-  color: $light-gray;
+  color: $close-btn;
 }
 
 .profession {
