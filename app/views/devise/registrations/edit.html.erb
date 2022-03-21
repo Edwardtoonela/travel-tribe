@@ -5,6 +5,7 @@
       <%= f.error_notification %>
 
       <div class="form-inputs edit-profile container mx-auto">
+        <h3 class="mt-4 pt-4"> Update your user info </h3>
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -22,7 +23,7 @@
                     required: false,
                     input_html: { autocomplete: "new-photo" } %>
         <div class="edit-password">
-        <h4> Update Your password </h4>
+        <h3 class="mt-4 pt-4"> Update Your password </h3>
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
@@ -31,7 +32,22 @@
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         </div>
-        <h4>Confirm Changes</h4>
+        <div>
+        <h3 class="mt-4 pt-4"> Let the world know about yourself! </h3>
+        <label for="exampleFormControlInput1" class="mt-4 pt-3 form-label d-flex flex-column">Your bio goes down here:</label>
+        <%= f.text_area :bio,
+                    required: false, class:"review-box", required: true, minlength: 30, placeholder: "I like hiking, surfing and anything else that's outdoors related..."%>
+        <label for="exampleFormControlInput1" class="form-label d-flex flex-column">What kind of traveler are you:</label>
+        <%= f.text_area :traveltype,
+                    required: false, class:"review-box", required: true, minlength: 30, placeholder: "How would you describe yourself as a traveler? Are you scrappy or spend a lot? How do you react in extreme situations? What do you value the most about the people you travel with? What would your perfect trip look like?"  %>
+        <%= f.input :languages,
+                    required: false,
+                    input_html: { placeholder: "I speak English, german, spanish ...." } %>
+        <%= f.input :home,
+                    required: false,
+                    input_html: { placeholder: "I live in Brazil, Rio de Janeiro" } %>
+        </div>
+        <h3 class="mt-4 pt-4" >Confirm Changes</h3>
         <%= f.input :current_password,
                     hint: "we need your current password to confirm your changes",
                     required: true,
@@ -44,5 +60,5 @@
       </div>
     <% end %>
 
-    
+
 </div>
