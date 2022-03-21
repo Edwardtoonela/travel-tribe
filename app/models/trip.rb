@@ -21,7 +21,7 @@ class Trip < ApplicationRecord
       review.rating
     end
     if ratings == []
-     "No Ratings"
+      "No Ratings"
     else
       (ratings.sum.to_f / ratings.length).round(2)
     end
