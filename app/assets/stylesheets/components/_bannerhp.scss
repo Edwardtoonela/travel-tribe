@@ -24,7 +24,7 @@
   border-radius: 10px;
   margin-top: 20px;
   background-color: $white;
-  color: rgba(0, 0, 0, 0.5);
+  color: $background;
 
 
   &:hover {
@@ -39,10 +39,10 @@
 
 .search-btn {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: $background;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.9);
+    color: $close-btn;
   }
 }
 

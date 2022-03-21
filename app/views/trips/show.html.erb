@@ -14,7 +14,6 @@
               <% else %>
                 <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg" %>
               <% end %>
-                <!--<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">-->
             </div>
             <h1 class="owner fs-1 text-center">Welcome to <%= @trip.user.user_name %>'s trip!</h1>
           </div>
@@ -30,7 +29,7 @@
                 <% if @user_bookmark.nil? %>
                   <%= simple_form_for [@trip, @bookmark] do |f| %>
                     <div class ="icon">
-                      <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "bookmark") %>
+                      <%= image_submit_tag("https://res.cloudinary.com/dhilged09/image/upload/v1647627309/development/bookmark-regular_fip3cc.svg", class: "icon bookmark") %>
                     </div>
                   <% end %>
                 <% else %>

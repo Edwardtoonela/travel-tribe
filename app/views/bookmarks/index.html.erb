@@ -8,7 +8,7 @@
         <div class="card h-100">
           <%= cl_image_tag bookmark.trip.photo.key, class: "card-img-top"%>
           <div class="card-body">
-            <h5 class="card-title">Trip name: <%= bookmark.trip.name %></h5>
+            <h5 class="card-title"><%= bookmark.trip.name %></h5>
             <p class="card-text">Location: <%= bookmark.trip.address %></p>
             <p class="card-text"> Date: <%= bookmark.trip.start_date %> - <%= bookmark.trip.end_date %></p>
           </div>
