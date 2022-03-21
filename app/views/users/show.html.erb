@@ -29,16 +29,16 @@
                 <% if @user.home == "" %>
                   <p class= "extra-placeholders">😴 Nothing here yet...</p>
                 <% else %>
-                  <p class ="after-placeholders"><%= @user.home %></p>
+                  <p class ="after-placeholders-dark"><%= @user.home %></p>
                 <% end %>
               </div>
 
-              <div class="d-flex flex-column">
+              <div class=" mb-5 pb- 5 d-flex flex-column">
                 <h3>Speaks:</h3>
                 <% if @user.languages == "" %>
                   <p class= "extra-placeholders">🧐 There has to be atleast one language, right?</p>
                 <% else %>
-                  <p class ="after-placeholders"><%= @user.languages %></p>
+                  <p class ="after-placeholders-dark"><%= @user.languages %></p>
                 <% end %>
               </div>
 
