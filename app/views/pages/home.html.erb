@@ -32,7 +32,7 @@
                     <ul>
                       <li class="mb-2 mt-1 me-0">
                         <h4><%= trip.start_date.strftime("%d.%B") %> - <%= trip.end_date.strftime("%d.%B.%Y") %> </h4>
-                        
+
                       </li>
                     </ul>
                     <div class="infos">
@@ -44,13 +44,16 @@
                       <% else %>
                         <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                       <% end %>
-                      <% trip.bookings.each do |booking| %>
-                        <% if booking.user.photo.attached? %>
-                          <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
-                        <% else %>
-                          <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                      <% unless check_status(trip) == false%>
+                        <% trip.bookings.each do |booking| %>
+                          <% if booking.user.photo.attached? %>
+                            <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                          <% else %>
+                            <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                          <% end %>
                         <% end %>
                       <% end %>
+                    <h3 style="display: flex; flex-direction: row-reverse;">$<%= average_price(trip) %> per person</h3>
                   </div>
 
                   <div class="p-3 flex-fill bd-highlight">
