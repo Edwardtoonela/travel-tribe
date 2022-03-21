@@ -3,7 +3,6 @@ class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy]
 
     def show
-      authorize @trip
       @booking = Booking.new
       @bookmark = Bookmark.new
       @user_bookmark = @trip.bookmarks.find_by(user: current_user)
@@ -35,8 +34,10 @@ class TripsController < ApplicationController
   end
 
   def update
-    authorize @trip
+    chat = Chatroom.find_by(name: @trip.name)
     if @trip.update(trip_params)
+      chat.name = @trip.name
+      chat.save
       redirect_to @trip, notice: 'trip was successfully updated.'
     else
       render :edit
@@ -44,7 +45,6 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    authorize @trip
     @trip.destroy
     redirect_to trips_url, notice: 'trip was successfully destroyed.'
   end
@@ -57,6 +57,7 @@ class TripsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:id])
+    authorize @trip
   end
 
   def trip_params

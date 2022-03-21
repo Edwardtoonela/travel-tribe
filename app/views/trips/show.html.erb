@@ -56,21 +56,23 @@
       <!-- TRIP INFO -->
        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 trip-descript">
           <h1 class="text-center trip-txt-style"><%= @trip.name %></h1>
+          <% if @trip.user == current_user%>
+            <%= link_to "edit trip", edit_trip_path(@trip) %>
+          <% end %>
           <div class="info-card p-3">
             <div class="trip-Location d-flex p-2">
               <p class="trip-date me-2"><%= @trip.start_date.strftime("%d") %> - <%= @trip.end_date.strftime("%d.%B/%Y") %></p>
               <p>|</p>
               <p class="text-center ms-2"><%= @trip.address  %></p>
             </div>
-
             <div class="people-price d-flex p-2">
             <h3><%= @trip.max_guests %> people </h3>
 
-            
+
             <h3>$<%= average_price %> per person</h3>
             </div>
             <div class="profile-photos">
-              
+
                 <% if @trip.user.photo.attached? %>
                   <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
                 <% else %>
