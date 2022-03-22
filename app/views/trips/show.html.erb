@@ -39,7 +39,7 @@
                 <% end %>
               <% end %>
 
-              <% if check_status(@trip) || @trip.user == current_user%>
+               <% if current_user_booking_status(@trip) || @trip.user == current_user%>
                 <%= link_to chatroom_path(@chat), class: "icon" do %>
                   <%= fa_icon('paper-plane') %>
                 <% end %>
@@ -67,7 +67,7 @@
               <p class="text-center ms-2"><%= @trip.address  %></p>
             </div>
             <div class="people-price d-flex p-2">
-            <h3><%= @trip.max_guests %> people </h3>
+            <h3>max. <%= @trip.max_guests %> people </h3>
 
 
             <h3>$<%= average_price(@trip) %> per person</h3>
@@ -80,17 +80,16 @@
                 <% else %>
                   <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
-                <% unless check_status(@trip) == false%>
-                  <% @trip.bookings.each do |booking| %>
-                  <%= link_to user_path(booking.user), class: "link_to_class" do %>
-                    <% if booking.user.photo.attached? %>
-                      <%= cl_image_tag booking.user.photo.key, width: 50, height: 50, crop: :fill, class: "profile-icon" %>
-                    <% else %>
-                      <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
-                    <% end %>
+                <% @trip.bookings.each do |booking| %>
+                  <% if check_status(booking)%>
+                    <%= link_to user_path(booking.user), class: "link_to_class" do %>
+                      <% if booking.user.photo.attached? %>
+                        <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                      <% else %>
+                        <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
+                      <% end %>
                   <% end %>
                 <% end %>
-              <% end  %>
             </div>
           </div>
           <h2 class="trip-txt-style text-center">Something about the trip</h2>
