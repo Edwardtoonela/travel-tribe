@@ -76,7 +76,7 @@
             <div class="profile-photos">
 
                 <% if @trip.user.photo.attached? %>
-                  <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                  <%= cl_image_tag @trip.user.photo.key, width: 50, height: 50, crop: :fill, class: "profile-icon" %>
                 <% else %>
                   <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
@@ -88,7 +88,6 @@
                       <% else %>
                         <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                       <% end %>
-                    <% end %>
                   <% end %>
                 <% end %>
             </div>
@@ -134,7 +133,7 @@
 
             <div class="name-profession">
               <span class="name">Surfing</span>
-              <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="profession">Love surfing? Here are some cool trips and spots to surf in South America.</span>
             </div>
 
             <div class="button">
@@ -158,7 +157,7 @@
 
             <div class="name-profession">
               <span class="name">Hiking</span>
-              <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="profession">Check out all the cool activities realted to hiking.</span>
             </div>
 
             <div class="button">
@@ -183,7 +182,7 @@
 
               <div class="name-profession">
                 <span class="name">Shopping</span>
-                <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.,</span>
+                <span class="profession">Are you a shopping person when travelling? Check out these cool places.</span>
               </div>
 
               <div class="button">
@@ -208,7 +207,7 @@
 
             <div class="name-profession">
               <span class="name">Stand Up Paddle</span>
-              <span class="profession">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="profession">Find chill and cool waters to do Stand Up Paddle.</span>
             </div>
 
             <div class="button">
