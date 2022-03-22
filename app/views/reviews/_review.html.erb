@@ -4,7 +4,7 @@
   <div class="row mb-1 review-head">
     <div class="col">
       <% if review.user.photo.attached? %>
-        <%= cl_image_tag review.user.photo.key, crop: :fill, class: "profile-icon" %>
+        <%= cl_image_tag review.user.photo.key, width: 50, height: 50, crop: :fill, class: "profile-icon" %>
       <% else %>
         <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
       <% end %>

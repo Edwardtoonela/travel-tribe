@@ -76,7 +76,7 @@
             <div class="profile-photos">
 
                 <% if @trip.user.photo.attached? %>
-                  <%= cl_image_tag @trip.user.photo.key, crop: :fill, class: "profile-icon" %>
+                  <%= cl_image_tag @trip.user.photo.key, width: 50, height: 50, crop: :fill, class: "profile-icon" %>
                 <% else %>
                   <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                 <% end %>
@@ -84,7 +84,7 @@
                   <% @trip.bookings.each do |booking| %>
                   <%= link_to user_path(booking.user), class: "link_to_class" do %>
                     <% if booking.user.photo.attached? %>
-                      <%= cl_image_tag booking.user.photo.key, crop: :fill, class: "profile-icon" %>
+                      <%= cl_image_tag booking.user.photo.key, width: 50, height: 50, crop: :fill, class: "profile-icon" %>
                     <% else %>
                       <%= image_tag "https://isaojose.com.br/wp-content/uploads/2020/12/blank-profile-picture-mystery-man-avatar-973460.jpg", class: "profile-icon" %>
                     <% end %>
