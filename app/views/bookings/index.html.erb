@@ -28,15 +28,17 @@
           <p class="ms-2"><%= link_to "x", trip_booking_path(booking.trip, booking), method: :delete, data: { confirm: "Are you sure?"} %>
           </p>
         </div>
-        <div class="booking-card h-100">
-          <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
-          <div class="card-body">
-            <h2 class="card-title"><%= booking.trip.name %></h2>
-            <h6 class="card-text">Location: <%= booking.trip.address %></h6>
-            <h6 class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></h6>
-            <p class="card-text text-end <%= booking_status(booking) %>"><%= booking.status %></p>
+        <%= link_to trip_path(booking.trip), class: "link_to_class" do %>
+          <div class="booking-card h-100">
+            <%= cl_image_tag booking.trip.photo.key, class: "card-img-top"%>
+            <div class="card-body">
+              <h2 class="card-title"><%= booking.trip.name %></h2>
+              <h6 class="card-text">Location: <%= booking.trip.address %></h6>
+              <h6 class="card-text"> Date: <%= booking.trip.start_date %> - <%= booking.trip.end_date %></h6>
+              <p class="card-text text-end <%= booking_status(booking) %>"><%= booking.status %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
     </div>
